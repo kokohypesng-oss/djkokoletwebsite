@@ -47,6 +47,15 @@ The application runs on Python's built-in HTTP server at port 5000. The server i
 - User authentication and personalized playlists
 
 ## Recent Changes
+- 2025-10-10: Enhanced UI with theme switcher and visual improvements
+  - Added Audiomack logo in header
+  - Implemented light/dark theme toggle with system preference support
+  - Applied Gothic A1 font to section headings (Top Trending, Top Rated Artist)
+  - Removed track numbers for cleaner Audiomack-style interface
+  - Redesigned track tray with rounded cards and better spacing
+  - Increased featured track image size (80px → 120px)
+  - Updated "See All" to "Click to view more 👈" at bottom right
+  - Enhanced track play buttons with solid orange style
 - 2025-10-10: Complete redesign to Audiomack mobile interface
 - Created mobile-first responsive design with orange/black theme
 - Implemented interactive music player with track selection
