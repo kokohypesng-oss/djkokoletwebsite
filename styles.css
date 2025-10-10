@@ -219,7 +219,7 @@ body {
     display: flex;
     align-items: center;
     background-color: var(--bg-tertiary);
-    border-radius: 12px;
+    border-radius: 0px;
     padding: 12px;
     gap: 12px;
 }
