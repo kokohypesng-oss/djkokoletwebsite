@@ -83,7 +83,21 @@ body {
     font-size: 45px;
     color: var(--primary-color);
     white-space: nowrap;
-    filter: drop-shadow(0 0 20px rgba(255, 108, 62, 0.9)) drop-shadow(0 0 40px rgba(255, 108, 62, 0.5)) drop-shadow(0 0 60px rgba(255, 108, 62, 0.3));
+    background: linear-gradient(45deg, #ff6c3e, #ffdd00, #00ff88, #00ddff, #ff00dd, #ff6c3e);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: electricGlow 2.5s ease infinite;
+}
+
+@keyframes electricGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .theme-toggle-container {
