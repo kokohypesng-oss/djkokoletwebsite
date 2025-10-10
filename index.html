@@ -3,86 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ Kokolet - Official Website</title>
+    <title>Audiomack</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">DJ KOKOLET</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#music">Music</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <div class="app-container">
+        <header class="top-bar">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search songs, artists, albums..." class="search-input">
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-section">
+                <h2>Trending Now</h2>
+                <div class="featured-track">
+                    <div class="track-cover">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="track-info">
+                        <h3>Summer Vibes 2025</h3>
+                        <p>DJ Kokolet</p>
+                    </div>
+                    <button class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h3>Top Trending</h3>
+                    <a href="#" class="see-all">See All</a>
+                </div>
+                <div class="track-list">
+                    <div class="track-item" data-track="1">
+                        <div class="track-number">1</div>
+                        <div class="track-cover-small">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="track-details">
+                            <h4>Midnight Dreams</h4>
+                            <p>The Soundwaves</p>
+                        </div>
+                        <button class="track-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="track-item" data-track="2">
+                        <div class="track-number">2</div>
+                        <div class="track-cover-small">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="track-details">
+                            <h4>Electric Soul</h4>
+                            <p>Beat Masters</p>
+                        </div>
+                        <button class="track-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="track-item" data-track="3">
+                        <div class="track-number">3</div>
+                        <div class="track-cover-small">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="track-details">
+                            <h4>Rhythm & Flow</h4>
+                            <p>Urban Collective</p>
+                        </div>
+                        <button class="track-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="track-item" data-track="4">
+                        <div class="track-number">4</div>
+                        <div class="track-cover-small">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="track-details">
+                            <h4>Sunset Boulevard</h4>
+                            <p>DJ Kokolet</p>
+                        </div>
+                        <button class="track-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="track-item" data-track="5">
+                        <div class="track-number">5</div>
+                        <div class="track-cover-small">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="track-details">
+                            <h4>Neon Nights</h4>
+                            <p>Electro Vibe</p>
+                        </div>
+                        <button class="track-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h3>Recently Played</h3>
+                    <a href="#" class="see-all">See All</a>
+                </div>
+                <div class="albums-grid">
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <h4>Midnight Mix</h4>
+                        <p>DJ Kokolet</p>
+                    </div>
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <h4>Urban Beats</h4>
+                        <p>Various Artists</p>
+                    </div>
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <i class="fas fa-compact-disc"></i>
+                        </div>
+                        <h4>Chill Vibes</h4>
+                        <p>Lofi Collective</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="mini-player">
+            <div class="player-track-info">
+                <div class="player-cover">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="player-details">
+                    <h4>Select a track</h4>
+                    <p>Start playing music</p>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn" id="prev-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play-pause-btn" id="play-pause-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn" id="next-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-fire"></i>
+                <span>Trending</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Library</span>
+            </a>
         </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>DJ KOKOLET</h1>
-            <p>Spinning the Beats, Creating the Vibes</p>
-            <a href="#contact" class="cta-button">Book Now</a>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About DJ Kokolet</h2>
-            <p>DJ Kokolet is a dynamic and versatile DJ bringing energy and excitement to every event. With a passion for music and an ear for what moves the crowd, DJ Kokolet delivers unforgettable experiences across genres.</p>
-        </div>
-    </section>
-
-    <section id="music" class="music">
-        <div class="container">
-            <h2>Music & Mixes</h2>
-            <div class="music-grid">
-                <div class="mix-card">
-                    <h3>Latest Mix</h3>
-                    <p>Check out the newest tracks and beats</p>
-                </div>
-                <div class="mix-card">
-                    <h3>Popular Sets</h3>
-                    <p>Fan favorites and most requested mixes</p>
-                </div>
-                <div class="mix-card">
-                    <h3>Live Sessions</h3>
-                    <p>Recorded live performances</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="events" class="events">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="events-list">
-                <div class="event-card">
-                    <h3>Event Coming Soon</h3>
-                    <p>Stay tuned for upcoming shows and performances</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Ready to book DJ Kokolet for your next event?</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 DJ Kokolet. All rights reserved.</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
