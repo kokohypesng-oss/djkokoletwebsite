@@ -139,3 +139,25 @@ document.querySelectorAll('.album-card').forEach(card => {
         updatePlayPauseIcon();
     });
 });
+
+const moreBtn = document.getElementById('more-btn');
+const moreDropdown = document.getElementById('more-dropdown');
+
+moreBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    moreDropdown.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+    if (!moreBtn.contains(e.target) && !moreDropdown.contains(e.target)) {
+        moreDropdown.classList.remove('active');
+    }
+});
+
+document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', () => {
+        console.log('Selected:', item.textContent);
+        moreDropdown.classList.remove('active');
+    });
+});
