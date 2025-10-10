@@ -10,16 +10,20 @@
 <body>
     <div class="app-container">
         <header class="top-bar">
+            <div class="header-row">
+                <span class="brand-name">Kokohypes</span>
+                <div class="theme-toggle-container">
+                    <button id="theme-toggle" aria-label="Toggle theme">
+                        <span class="toggle-label off">OFF</span>
+                        <i class="fas fa-moon toggle-icon"></i>
+                        <i class="fas fa-sun toggle-icon"></i>
+                        <span class="toggle-label on">ON</span>
+                    </button>
+                </div>
+            </div>
             <div class="search-container">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Search songs, artists, albums..." class="search-input">
-                <div class="header-controls">
-                    <button id="theme-toggle" aria-label="Toggle theme">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <span class="brand-name">Kokohypes</span>
-                </div>
             </div>
         </header>
 
@@ -117,6 +121,9 @@
                             </div>
                             <h4>Midnight Mix</h4>
                             <p>DJ Kokolet</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -124,6 +131,9 @@
                             </div>
                             <h4>Urban Beats</h4>
                             <p>Various Artists</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -131,6 +141,9 @@
                             </div>
                             <h4>Chill Vibes</h4>
                             <p>Lofi Collective</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -138,6 +151,9 @@
                             </div>
                             <h4>Summer Hits</h4>
                             <p>DJ Kokolet</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -145,6 +161,9 @@
                             </div>
                             <h4>Electro Wave</h4>
                             <p>Beat Makers</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -152,6 +171,9 @@
                             </div>
                             <h4>Jazz Fusion</h4>
                             <p>Smooth Jazz</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -159,6 +181,9 @@
                             </div>
                             <h4>Hip Hop Nation</h4>
                             <p>Urban Flow</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -166,6 +191,9 @@
                             </div>
                             <h4>Rock Legends</h4>
                             <p>Classic Rock</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -173,6 +201,9 @@
                             </div>
                             <h4>Pop Stars</h4>
                             <p>Top Charts</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="album-card">
                             <div class="album-cover">
@@ -180,12 +211,31 @@
                             </div>
                             <h4>R&B Grooves</h4>
                             <p>Soulful Vibes</p>
+                            <div class="swipe-indicator">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <a href="#" class="see-all">Click to view more 👈</a>
             </section>
         </main>
+
+        <div class="floating-whatsapp">
+            <button class="whatsapp-btn" id="whatsapp-btn" aria-label="WhatsApp Options">
+                <i class="fab fa-whatsapp"></i>
+            </button>
+            <div class="whatsapp-dropdown" id="whatsapp-dropdown">
+                <a href="#" class="whatsapp-option" id="contact-us">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact Us</span>
+                </a>
+                <a href="#" class="whatsapp-option" id="share-post">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Share this post</span>
+                </a>
+            </div>
+        </div>
 
         <div class="mini-player">
             <div class="player-track-info">

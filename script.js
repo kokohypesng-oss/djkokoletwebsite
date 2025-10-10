@@ -197,3 +197,36 @@ document.querySelectorAll('.dropdown-item').forEach(item => {
         moreDropdown.classList.remove('active');
     });
 });
+
+const whatsappBtn = document.getElementById('whatsapp-btn');
+const whatsappDropdown = document.getElementById('whatsapp-dropdown');
+const contactUsBtn = document.getElementById('contact-us');
+const sharePostBtn = document.getElementById('share-post');
+
+whatsappBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    whatsappDropdown.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+    if (!whatsappBtn.contains(e.target) && !whatsappDropdown.contains(e.target)) {
+        whatsappDropdown.classList.remove('active');
+    }
+});
+
+contactUsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const phoneNumber = '1234567890';
+    const message = encodeURIComponent('Hello, I would like to contact you.');
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    whatsappDropdown.classList.remove('active');
+});
+
+sharePostBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const currentUrl = window.location.href;
+    const shareText = encodeURIComponent('Check out this awesome music on Kokohypes!');
+    window.open(`https://wa.me/?text=${shareText}%20${encodeURIComponent(currentUrl)}`, '_blank');
+    whatsappDropdown.classList.remove('active');
+});
