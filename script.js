@@ -230,3 +230,31 @@ sharePostBtn.addEventListener('click', (e) => {
     window.open(`https://wa.me/?text=${shareText}%20${encodeURIComponent(currentUrl)}`, '_blank');
     whatsappDropdown.classList.remove('active');
 });
+
+const trafficCountElement = document.getElementById('traffic-count');
+let trafficCount = 20000;
+
+function updateTrafficCount() {
+    const variation = Math.floor(Math.random() * 100) - 50;
+    trafficCount = Math.max(19900, Math.min(20100, trafficCount + variation));
+    trafficCountElement.textContent = trafficCount.toLocaleString();
+    
+    const bars = document.querySelectorAll('.traffic-bar');
+    bars.forEach(bar => {
+        const newHeight = Math.random() * 50 + 40;
+        bar.style.height = newHeight + '%';
+    });
+}
+
+setInterval(updateTrafficCount, 3000);
+
+const newsletterForm = document.getElementById('newsletter-form');
+newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(newsletterForm);
+    const name = newsletterForm.querySelector('input[type="text"]').value;
+    const email = newsletterForm.querySelector('input[type="email"]').value;
+    
+    alert(`Thank you ${name}! You've been subscribed successfully. Check ${email} for updates!`);
+    newsletterForm.reset();
+});
