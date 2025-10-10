@@ -1,3 +1,36 @@
+function getPreferredTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    
+    if (storedTheme) {
+        return storedTheme;
+    }
+    
+    return window.matchMedia('(prefers-color-scheme: dark)').matches 
+        ? 'dark' 
+        : 'light';
+}
+
+function setTheme(theme, persist = false) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (persist) {
+        localStorage.setItem('theme', theme);
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || getPreferredTheme();
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme, true);
+}
+
+setTheme(getPreferredTheme(), false);
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light', false);
+    }
+});
+
 const tracks = [
     { id: 1, title: 'Midnight Dreams', artist: 'The Soundwaves' },
     { id: 2, title: 'Electric Soul', artist: 'Beat Masters' },
@@ -79,6 +112,9 @@ function playPrevious() {
     const prevId = currentTrack.id > 1 ? currentTrack.id - 1 : tracks.length;
     playTrack(prevId);
 }
+
+const themeToggleBtn = document.getElementById('theme-toggle');
+themeToggleBtn.addEventListener('click', toggleTheme);
 
 playPauseBtn.addEventListener('click', togglePlayPause);
 nextBtn.addEventListener('click', playNext);
