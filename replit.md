@@ -47,6 +47,12 @@ The application runs on Python's built-in HTTP server at port 5000. The server i
 - User authentication and personalized playlists
 
 ## Recent Changes
+- 2025-10-10: Further UI refinements and feature additions
+  - Integrated theme switcher and 'Kokohypes' branding into search bar
+  - Changed hero section to "🔥 Hottest Exclusive Highlight" with Gothic A1 H2 font
+  - Reduced featured track box size for better mobile proportions (90px image)
+  - Added 10-artist horizontal scrolling grid (4 visible, 6 swipeable)
+  - Optimized bottom navigation for auto-fit screen width with text truncation
 - 2025-10-10: Enhanced UI with theme switcher and visual improvements
   - Added Audiomack logo in header
   - Implemented light/dark theme toggle with system preference support
