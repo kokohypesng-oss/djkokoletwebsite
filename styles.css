@@ -80,7 +80,7 @@ body {
 
 .brand-name {
     font-weight: 900;
-    font-size: 45px;
+    font-size: 35px;
     color: var(--primary-color);
     white-space: nowrap;
     background: linear-gradient(45deg, #ff6c3e, #ffdd00, #00ff88, #00ddff, #ff00dd, #ff6c3e);
