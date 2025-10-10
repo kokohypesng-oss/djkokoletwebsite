@@ -46,7 +46,19 @@ The application runs on Python's built-in HTTP server at port 5000. The server i
 - Enhanced accessibility (ARIA labels, keyboard navigation)
 - User authentication and personalized playlists
 
+## Deployment
+- **Development**: Runs on `python server.py` at port 5000
+- **Production**: Configured for autoscale deployment with same command
+- Server properly configured for Replit environment with 0.0.0.0 host binding
+- Cache-control headers ensure fresh content delivery
+
 ## Recent Changes
+- 2025-10-10: Replit Environment Setup
+  - Installed Python 3.11 module
+  - Configured workflow for development server (port 5000)
+  - Set up deployment configuration for production (autoscale)
+  - Verified website functionality with screenshot test
+  - Project is fully operational in Replit environment
 - 2025-10-10: Further UI refinements and feature additions
   - Integrated theme switcher and 'Kokohypes' branding into search bar
   - Changed hero section to "🔥 Hottest Exclusive Highlight" with Gothic A1 H2 font
