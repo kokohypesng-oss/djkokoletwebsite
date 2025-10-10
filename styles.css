@@ -80,7 +80,7 @@ body {
 
 .brand-name {
     font-weight: 900;
-    font-size: 32px;
+    font-size: 45px;
     color: var(--primary-color);
     white-space: nowrap;
     background: linear-gradient(45deg, #ff6c3e, #ffdd00, #00ff88, #00ddff, #ff00dd, #ff6c3e);
@@ -88,9 +88,9 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: electricGlow 3s ease infinite;
-    text-shadow: 0 0 20px rgba(255, 108, 62, 0.5);
-    filter: drop-shadow(0 0 15px rgba(255, 108, 62, 0.8)) drop-shadow(0 0 30px rgba(255, 108, 62, 0.4));
+    animation: electricGlow 2.5s ease infinite;
+    text-shadow: 0 0 25px rgba(255, 108, 62, 0.6);
+    filter: drop-shadow(0 0 20px rgba(255, 108, 62, 0.9)) drop-shadow(0 0 40px rgba(255, 108, 62, 0.5)) drop-shadow(0 0 60px rgba(255, 108, 62, 0.3));
 }
 
 @keyframes electricGlow {
@@ -413,66 +413,66 @@ body {
 }
 
 .swipe-indicator {
+    display: none;
+}
+
+.albums-scroll-container {
+    position: relative;
+}
+
+.scroll-arrow {
     position: absolute;
     top: 50%;
-    right: -15px;
+    right: -10px;
     transform: translateY(-50%);
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    z-index: 2;
-    animation: rainbowGlow 3s linear infinite;
+    font-size: 50px;
+    z-index: 10;
+    animation: blinkingRainbow 2s ease-in-out infinite;
+    cursor: pointer;
 }
 
-.album-card:nth-child(7) .swipe-indicator,
-.album-card:nth-child(8) .swipe-indicator,
-.album-card:nth-child(9) .swipe-indicator,
-.album-card:nth-child(10) .swipe-indicator {
-    right: -20px;
-}
-
-.album-card:nth-child(9) .swipe-indicator,
-.album-card:nth-child(10) .swipe-indicator {
-    font-size: 40px;
-}
-
-@keyframes rainbowGlow {
-    0% {
+@keyframes blinkingRainbow {
+    0%, 100% {
         color: #ff0000;
-        text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
-        filter: drop-shadow(0 0 10px #ff0000);
+        text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000;
+        filter: drop-shadow(0 0 20px #ff0000);
+        opacity: 1;
     }
-    16% {
+    14% {
         color: #ff7f00;
-        text-shadow: 0 0 20px #ff7f00, 0 0 40px #ff7f00;
-        filter: drop-shadow(0 0 10px #ff7f00);
+        text-shadow: 0 0 30px #ff7f00, 0 0 60px #ff7f00;
+        filter: drop-shadow(0 0 20px #ff7f00);
+        opacity: 0.8;
     }
-    33% {
+    28% {
         color: #ffff00;
-        text-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00;
-        filter: drop-shadow(0 0 10px #ffff00);
+        text-shadow: 0 0 30px #ffff00, 0 0 60px #ffff00;
+        filter: drop-shadow(0 0 20px #ffff00);
+        opacity: 1;
     }
-    50% {
+    42% {
         color: #00ff00;
-        text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
-        filter: drop-shadow(0 0 10px #00ff00);
+        text-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00;
+        filter: drop-shadow(0 0 20px #00ff00);
+        opacity: 0.8;
     }
-    66% {
+    56% {
         color: #0000ff;
-        text-shadow: 0 0 20px #0000ff, 0 0 40px #0000ff;
-        filter: drop-shadow(0 0 10px #0000ff);
+        text-shadow: 0 0 30px #0000ff, 0 0 60px #0000ff;
+        filter: drop-shadow(0 0 20px #0000ff);
+        opacity: 1;
     }
-    83% {
+    70% {
         color: #4b0082;
-        text-shadow: 0 0 20px #4b0082, 0 0 40px #4b0082;
-        filter: drop-shadow(0 0 10px #4b0082);
+        text-shadow: 0 0 30px #4b0082, 0 0 60px #4b0082;
+        filter: drop-shadow(0 0 20px #4b0082);
+        opacity: 0.8;
     }
-    100% {
+    84% {
         color: #9400d3;
-        text-shadow: 0 0 20px #9400d3, 0 0 40px #9400d3;
-        filter: drop-shadow(0 0 10px #9400d3);
+        text-shadow: 0 0 30px #9400d3, 0 0 60px #9400d3;
+        filter: drop-shadow(0 0 20px #9400d3);
+        opacity: 1;
     }
 }
 
@@ -500,14 +500,14 @@ body {
     right: 0;
     background-color: var(--bg-tertiary);
     border-top: 1px solid var(--border-color);
-    padding: 8px 15px;
+    padding: 12px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 99;
     max-width: 480px;
     margin: 0 auto;
-    height: 50px;
+    height: 70px;
 }
 
 .player-track-info {
@@ -767,9 +767,20 @@ body {
     border-radius: 16px;
     padding: 20px;
     margin: 20px 15px;
-    border: 1px solid var(--border-color);
+    border: 2px solid transparent;
+    background-image: 
+        linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)),
+        linear-gradient(135deg, #ff6c3e, #ffdd00, #00ff88, #0088ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.traffic-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 108, 62, 0.3);
 }
 
 .traffic-panel::before {
@@ -779,8 +790,22 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 108, 62, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 108, 62, 0.4), transparent);
     animation: shimmer 3s infinite;
+}
+
+.traffic-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, #ff6c3e, #ffdd00, #00ff88, #0088ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    animation: borderPulse 4s ease-in-out infinite;
 }
 
 @keyframes shimmer {
@@ -789,6 +814,15 @@ body {
     }
     100% {
         left: 100%;
+    }
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
     }
 }
 
@@ -828,12 +862,28 @@ body {
 .traffic-count {
     font-size: 36px;
     font-weight: 900;
-    background: linear-gradient(45deg, #ff6c3e, #ffdd00);
+    background: linear-gradient(45deg, #ff6c3e, #ffdd00, #ff6c3e);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-align: center;
     margin: 10px 0;
+    animation: gradientFlow 3s ease infinite;
+    transition: transform 0.3s ease;
+}
+
+.traffic-count:hover {
+    transform: scale(1.05);
+}
+
+@keyframes gradientFlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .traffic-label {
@@ -855,15 +905,28 @@ body {
     flex: 1;
     background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
     border-radius: 4px 4px 0 0;
-    animation: barGrow 2s ease infinite;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes barGrow {
+.traffic-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+    animation: barShine 2s ease infinite;
+}
+
+@keyframes barShine {
     0%, 100% {
-        transform: scaleY(1);
+        opacity: 0.3;
     }
     50% {
-        transform: scaleY(1.1);
+        opacity: 0.7;
     }
 }
 
