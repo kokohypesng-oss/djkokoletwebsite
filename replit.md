@@ -1,31 +1,54 @@
-# DJ Kokolet Website
+# Audiomack Mobile Interface
 
 ## Overview
-This is the official website for DJ Kokolet. It's a modern, responsive single-page website showcasing DJ services, music, events, and contact information.
+A mobile-first music streaming interface inspired by Audiomack, featuring a modern dark theme with orange accents, music player controls, and an intuitive mobile user experience.
 
 ## Project Structure
-- `index.html` - Main website HTML structure
-- `styles.css` - CSS styling and animations
-- `script.js` - JavaScript for interactivity and smooth scrolling
-- `server.py` - Python HTTP server to serve the static website
+- `index.html` - Main application structure with search, trending tracks, albums, and navigation
+- `styles.css` - Mobile-first CSS styling with Audiomack color scheme (orange/black theme)
+- `script.js` - Interactive music player functionality and UI state management
+- `server.py` - Python HTTP server to serve the application
 
 ## Technology Stack
 - **Frontend**: HTML5, CSS3, JavaScript
+- **Icons**: Font Awesome 6.4.0 (CDN)
 - **Server**: Python 3.11 with built-in HTTP server
 - **Port**: 5000 (configured for Replit environment)
 
 ## Features
-- Responsive design that works on desktop and mobile
-- Smooth scrolling navigation
-- Animated hero section
-- Sections for About, Music, Events, and Contact
-- Contact form (frontend only)
-- Modern gradient design with smooth animations
+- **Mobile-First Design**: Optimized for mobile devices with responsive layout
+- **Audiomack-Style UI**: Dark theme with signature orange (#ff6c3e) accents
+- **Music Player Controls**: Play/pause, next/previous track functionality
+- **Track Management**: Featured tracks, trending lists, and recently played albums
+- **Interactive Elements**: Track selection, bottom navigation, and search bar
+- **Sticky Navigation**: Fixed header, mini-player, and bottom navigation bar
+
+## Color Scheme
+- Primary: #ff6c3e (Audiomack Orange)
+- Background: #0a0a0a (Dark Black)
+- Secondary Background: #1a1a1a
+- Text: #ffffff (Primary), #b3b3b3 (Secondary)
+
+## User Interface Components
+1. **Top Search Bar** - Sticky search input for songs, artists, and albums
+2. **Trending Section** - Featured track with large play button
+3. **Track Lists** - Numbered trending tracks with individual play controls
+4. **Album Grid** - Recently played albums in responsive grid layout
+5. **Mini Player** - Fixed bottom player showing current track and controls
+6. **Bottom Navigation** - Home, Trending, Search, and Library tabs
 
 ## Development
-The website runs on Python's built-in HTTP server at port 5000. The server includes cache-control headers to ensure updates are immediately visible during development.
+The application runs on Python's built-in HTTP server at port 5000. The server includes cache-control headers to ensure updates are immediately visible during development.
+
+## Future Enhancements (Optional)
+- Real audio playback integration
+- LocalStorage for playlist persistence
+- Enhanced accessibility (ARIA labels, keyboard navigation)
+- User authentication and personalized playlists
 
 ## Recent Changes
-- 2025-10-10: Initial project setup with static website for DJ Kokolet
-- Created responsive single-page website with modern design
-- Configured Python HTTP server on port 5000 for Replit environment
+- 2025-10-10: Complete redesign to Audiomack mobile interface
+- Created mobile-first responsive design with orange/black theme
+- Implemented interactive music player with track selection
+- Added bottom navigation and mini-player controls
+- Configured for Replit deployment on port 5000
