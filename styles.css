@@ -964,3 +964,100 @@ body {
 .newsletter-btn:active {
     transform: translateY(0);
 }
+
+/* Music List Section */
+.music-list-section {
+    padding: 15px;
+}
+
+.music-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.music-list-item:hover {
+    background-color: rgba(255, 108, 62, 0.05);
+}
+
+.music-list-item:last-child {
+    border-bottom: none;
+}
+
+.music-cover-large {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+    flex-shrink: 0;
+}
+
+@media (max-width: 400px) {
+    .music-cover-large {
+        width: 140px;
+        height: 140px;
+        font-size: 40px;
+    }
+    
+    .music-list-item {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 350px) {
+    .music-cover-large {
+        width: 120px;
+        height: 120px;
+        font-size: 35px;
+    }
+}
+
+.music-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 10px;
+    min-width: 0;
+}
+
+.music-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (min-width: 400px) {
+    .music-info h3 {
+        font-size: 18px;
+    }
+}
+
+.music-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.music-badge i {
+    font-size: 8px;
+    color: var(--text-primary);
+}
+
+.music-badge span {
+    font-weight: 500;
+}
+
