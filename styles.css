@@ -1066,6 +1066,109 @@ body {
     transform: translateY(0);
 }
 
+/* Trending Now Section */
+.trending-now-section {
+    padding: 20px 15px;
+    background: var(--bg-dark);
+}
+
+.trending-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.trending-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.trending-item:hover {
+    background: var(--bg-tertiary);
+    transform: translateX(5px);
+}
+
+.trending-rank {
+    width: 36px;
+    height: 36px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.trending-thumbnail {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.trending-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.trending-info h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.trending-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.more-trending-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.more-trending-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.music-category-heading {
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: 20px 15px 10px;
+    margin: 0;
+}
+
 /* Music List Section */
 .music-list-section {
     padding: 15px;
