@@ -1,28 +1,63 @@
-# Audiomack Mobile Interface
+# DJ Kokolet Music Website (Kokohypes)
 
 ## Overview
-A mobile-first music streaming interface inspired by Audiomack, featuring a modern dark theme with orange accents, music player controls, and an intuitive mobile user experience. The project aims to provide a robust and engaging platform for music discovery and playback, with potential for future expansion into advanced features like real audio playback and user authentication.
+A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a modern dark/light theme with orange accents, music player controls, and an intuitive mobile user experience. The site showcases DJ tracks, trending music, and mixtapes with a sleek, modern interface.
+
+## Recent Changes
+**2025-10-14:** Successfully imported GitHub project to Replit environment
+- Configured Python HTTP server workflow running on port 5000
+- Set up deployment configuration for autoscale production deployment
+- Verified all pages (index.html, music.html, mixtape.html) are working correctly
+- Updated .gitignore to properly track Replit configuration files
 
 ## User Preferences
-No specific user preferences were provided in the original document.
+No specific user preferences documented yet.
 
-## System Architecture
-The application is built with a mobile-first design philosophy, ensuring optimal viewing and interaction across various mobile devices. The UI adheres to an Audiomack-style dark theme with signature orange accents (`#ff6c3e`) for a consistent and modern aesthetic.
+## Project Architecture
 
-**Core Features:**
-- **Navigation:** Sticky top search bar, mini-player, and bottom navigation (Home, Trending, Search, Library) for easy access.
-- **Music Playback:** Interactive music player controls including play/pause, next/previous track functionality, and a dedicated featured player with waveform visualization.
-- **Content Display:** Sections for trending tracks, featured tracks, "Rave of the Moment" mixtapes, and recently played albums presented in responsive grid and list layouts.
-- **Dynamic Content:** Mixtape-specific pages with customized headings and badges, and an advertisement banner with dynamic contact information.
-- **Interactive Elements:** Track selection, share functionality with social media integration, and download capability (configured for demo mode).
-- **Design Language:** A "sharp edges" design approach is applied consistently, featuring `border-radius: 0px` for album covers, track cards, and UI elements to achieve a bold, modern look.
-- **Branding:** Dynamic Kokohypes logo with an electrifying gradient animation.
+### Structure
+```
+.
+├── index.html          # Homepage with featured tracks and trending music
+├── music.html          # Top 5 World Most Played tracks
+├── mixtape.html        # Rave of the Moment featured player with waveform
+├── script.js           # JavaScript for interactivity and music player controls
+├── styles.css          # Responsive styling with dark/light theme support
+├── server.py           # Python HTTP server (port 5000)
+└── replit.md          # This documentation file
+```
 
-**Technical Implementation:**
-- **Frontend:** Developed using HTML5, CSS3, and JavaScript.
-- **Icons:** Font Awesome 6.4.0 (CDN) is used for iconography.
-- **Server:** A Python 3.11 built-in HTTP server (`server.py`) serves the application, configured to run on port 5000 and bind to `0.0.0.0` for Replit environment compatibility.
-- **Deployment:** Configured for autoscale deployment in a production environment with cache-control headers to ensure fresh content delivery.
+### Core Features
+- **Navigation:** Sticky top search bar, mini-player, and bottom navigation (Home, Music, Mixtape, MyXZone, Search, More)
+- **Theme Toggle:** Light/dark mode with localStorage persistence
+- **Music Player:** Interactive controls (play/pause, next/previous) with track management
+- **Featured Content:** 
+  - Homepage: Hottest Exclusive Highlight, Top Trending tracks, Top Rated Artists
+  - Music page: Top 5 World Most Played ranking
+  - Mixtape page: Rave of the Moment with waveform visualization
+- **Interactive Elements:** 
+  - Track selection and playback
+  - "Show More" functionality to load additional tracks
+  - WhatsApp integration for contact and sharing
+  - Newsletter subscription form
+  - Live traffic counter
+  - Social media share modal (Facebook, Twitter, WhatsApp, Telegram, LinkedIn, Reddit)
+- **Design Language:** Sharp edges design with `border-radius: 0px` for a bold, modern aesthetic
+- **Branding:** Kokohypes logo with animated gradient effect
+
+### Technical Implementation
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla JS)
+- **Icons:** Font Awesome 6.4.0 (CDN)
+- **Server:** Python 3.12 built-in HTTP server
+  - Runs on port 5000
+  - Binds to 0.0.0.0 for Replit compatibility
+  - Implements cache-control headers (no-cache, no-store, must-revalidate)
+- **Deployment:** Configured for autoscale deployment with production-ready settings
+
+### Replit Configuration
+- **Workflow:** "Server" runs `python3 server.py` on port 5000 with webview output
+- **Deployment Target:** Autoscale (stateless web application)
+- **Port Configuration:** Frontend on 5000 (as required by Replit environment)
 
 ## External Dependencies
-- **Font Awesome 6.4.0 (CDN):** Used for icons throughout the interface.
+- **Font Awesome 6.4.0 (CDN):** Icon library for UI elements
