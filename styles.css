@@ -1199,7 +1199,7 @@ body {
 }
 
 .featured-album-art {
-    width: calc(100% - 90px);
+    width: calc(100% - 120px);
     margin: 0 auto;
     aspect-ratio: 1;
     overflow: hidden;
@@ -1211,7 +1211,7 @@ body {
 
 .featured-track-title {
     text-align: center;
-    padding: 10px 15px 15px;
+    padding: 10px 15px 10px;
     background: var(--bg-secondary);
 }
 
@@ -1230,11 +1230,11 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-top: auto;
+    margin: auto;
     height: 50px;
     width: auto;
     background: var(--bg-secondary);
-    gap: 25px;
+    gap: 15px;
 }
 
 .action-btn {
@@ -1341,9 +1341,8 @@ body {
 }
 
 .waveform-container {
-    padding: 10px 15px 20px;
-    padding-bottom: 20px;
-    margin-top: 0px;
+    padding: 10px 15px 10px;
+    margin: 0 auto;
     background: var(--bg-secondary);
     position: relative;
 }
