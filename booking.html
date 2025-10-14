@@ -28,8 +28,114 @@
         </header>
 
         <main class="main-content">
-            <!-- Content area left blank for testing category page activation -->
+            <section class="booking-section">
+                <div class="booking-container">
+                    <div class="booking-header">
+                        <h1>Book DJ Kokolet</h1>
+                        <p>Make your event unforgettable! We're committed to providing exceptional service and being the life of the party. Fill out the form below to hire DJ Kokolet for your upcoming event.</p>
+                    </div>
+
+                    <form class="booking-form" id="booking-form">
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-type">Event Type *</label>
+                            <select id="event-type" name="event-type" required>
+                                <option value="">Select event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="club">Club/Nightlife</option>
+                                <option value="festival">Festival</option>
+                                <option value="private">Private Party</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-date">Event Date *</label>
+                            <input type="date" id="event-date" name="event-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-time">Event Time *</label>
+                            <input type="time" id="event-time" name="event-time" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-location">Event Location *</label>
+                            <input type="text" id="event-location" name="event-location" required placeholder="Venue name and address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-duration">Expected Duration (hours) *</label>
+                            <input type="number" id="event-duration" name="event-duration" required min="1" max="12" placeholder="e.g., 4">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guest-count">Expected Number of Guests *</label>
+                            <input type="number" id="guest-count" name="guest-count" required min="1" placeholder="e.g., 100">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="music-preferences">Music Preferences</label>
+                            <input type="text" id="music-preferences" name="music-preferences" placeholder="e.g., Hip-Hop, Afrobeat, EDM">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional-details">Additional Details About Your Event</label>
+                            <textarea id="additional-details" name="additional-details" placeholder="Tell us more about your party, special requests, or any other information we should know..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Book Now</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Success Message Overlay -->
+            <div class="success-overlay" id="success-overlay">
+                <div class="success-message">
+                    <h2>Thank you for choosing us!</h2>
+                    <p>We'll get back to you shortly to confirm your booking.</p>
+                </div>
+            </div>
         </main>
+
+        <div class="mini-player">
+            <div class="player-track-info">
+                <div class="player-cover">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="player-details">
+                    <h4>Select a track</h4>
+                    <p>Start playing music</p>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn" id="prev-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play-pause-btn" id="play-pause-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn" id="next-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
 
         <nav class="bottom-nav">
             <a href="/index.html" class="nav-item">

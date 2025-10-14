@@ -703,16 +703,22 @@ function createSlug(text) {
         .trim();
 }
 
-function navigateToContent(category, title) {
+function navigateToContent(category, title, filename = null) {
     const slug = createSlug(title);
     const url = `/${category}/${slug}/`;
+    
+    // Determine if content is audio based on category or filename
+    const isAudio = category === 'music' || category === 'mixtape' || 
+                    (filename && (filename.toLowerCase().endsWith('.mp3') || filename.toLowerCase().endsWith('.wav')));
     
     // Store content data in sessionStorage for the informative page
     sessionStorage.setItem('contentData', JSON.stringify({
         category: category,
         title: title,
         url: url,
-        date: new Date().toLocaleDateString()
+        date: new Date().toLocaleDateString(),
+        filename: filename || (isAudio ? `${title}.mp3` : null),
+        type: isAudio ? 'audio' : 'content'
     }));
     
     // Navigate to informative page
@@ -759,6 +765,11 @@ if (window.location.pathname.includes('informative-page.html')) {
         // Update browser URL without reload
         if (contentData.url && history.pushState) {
             history.pushState({}, '', contentData.url);
+        }
+        
+        // Check if content is an audio file and auto-show play/share/download actions
+        if (contentData.type === 'audio' && contentData.filename) {
+            handleAudioFileUpload({ filename: contentData.filename });
         }
     }
     
@@ -882,4 +893,95 @@ if (window.location.pathname.includes('informative-page.html')) {
             });
         }
     }
+    
+    // Tag extraction and generation
+    function extractAndGenerateTags() {
+        const contentBody = document.querySelector('.content-body');
+        const tagsContainer = document.getElementById('tags-container');
+        
+        if (!contentBody || !tagsContainer) return;
+        
+        const textContent = contentBody.textContent || '';
+        const words = textContent.toLowerCase()
+            .replace(/[^\w\s]/g, ' ')
+            .split(/\s+/)
+            .filter(word => word.length > 3);
+        
+        const uniqueWords = [...new Set(words)];
+        const commonWords = ['this', 'that', 'with', 'from', 'have', 'been', 'will', 'your', 'more', 'when', 'such', 'which', 'their', 'some', 'other', 'into', 'than', 'them', 'only', 'over', 'also', 'just', 'should', 'could', 'would'];
+        
+        const filteredWords = uniqueWords
+            .filter(word => !commonWords.includes(word))
+            .slice(0, 10);
+        
+        tagsContainer.innerHTML = '';
+        
+        filteredWords.forEach(word => {
+            const tagLink = document.createElement('a');
+            tagLink.href = getDomainPrefix() + `/tag/${word}/`;
+            tagLink.className = 'tag-link';
+            tagLink.textContent = `#${word}`;
+            tagsContainer.appendChild(tagLink);
+        });
+    }
+    
+    // Domain prefix for live deployment
+    function getDomainPrefix() {
+        if (window.location.hostname === 'localhost' || window.location.hostname.includes('replit')) {
+            return '';
+        }
+        return 'https://www.domainname.com';
+    }
+    
+    // File type detection for .mp3/.wav
+    function detectFileTypeAndShowActions(filename) {
+        if (!filename) return false;
+        
+        const extension = filename.toLowerCase().split('.').pop();
+        const audioExtensions = ['mp3', 'wav'];
+        
+        return audioExtensions.includes(extension);
+    }
+    
+    // Auto-show play/share/download for audio files
+    function handleAudioFileUpload(fileData) {
+        const contentActions = document.querySelector('.content-actions');
+        const contentFeaturedImage = document.querySelector('.content-featured-image');
+        
+        if (detectFileTypeAndShowActions(fileData.filename)) {
+            if (contentActions) {
+                contentActions.style.display = 'flex';
+            }
+            
+            if (contentFeaturedImage) {
+                contentFeaturedImage.innerHTML = '<i class="fas fa-music"></i>';
+            }
+        }
+    }
+    
+    // Call tag extraction on page load for informative page
+    if (document.querySelector('.content-detail-section')) {
+        extractAndGenerateTags();
+    }
+}
+
+// Booking form submission handler
+const bookingForm = document.getElementById('booking-form');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const successOverlay = document.getElementById('success-overlay');
+        
+        if (successOverlay) {
+            successOverlay.classList.add('active');
+            
+            setTimeout(() => {
+                successOverlay.classList.remove('active');
+                bookingForm.reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                location.reload();
+            }, 3000);
+        }
+    });
 }

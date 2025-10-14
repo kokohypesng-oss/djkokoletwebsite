@@ -1826,8 +1826,9 @@ body {
 }
 
 .content-featured-image {
-    width: 280px;
-    height: 280px;
+    width: 90%;
+    height: auto;
+    min-height: 280px;
     background: var(--bg-tertiary);
     border-radius: 0px;
     display: flex;
@@ -2050,5 +2051,188 @@ body {
 .download-proceed-btn:active {
     transform: scale(0.95);
     background: var(--secondary-color);
+}
+
+/* Tag Links Styling */
+.content-tags {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.content-tags h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-link {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.tag-link:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Booking Form Styling */
+.booking-section {
+    padding: 20px 15px;
+}
+
+.booking-container {
+    background: var(--bg-secondary);
+    border-radius: 0px;
+    padding: 25px 20px;
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.booking-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.booking-header p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 12px 15px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 0px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Success Message Overlay */
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.success-overlay.active {
+    display: flex;
+}
+
+.success-message {
+    background: var(--bg-secondary);
+    padding: 40px 30px;
+    border-radius: 0px;
+    text-align: center;
+    max-width: 90%;
+    animation: successSlideIn 0.4s ease;
+}
+
+.success-message h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+@keyframes successSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
