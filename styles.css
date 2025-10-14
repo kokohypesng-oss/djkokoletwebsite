@@ -1226,7 +1226,7 @@ body {
     width: calc(100% - 60px);
     margin: 15px auto 0;
     background: var(--backdrop-color);
-    border-radius: 50px;
+    border-radius: 50px 50px 0px 0px;
     padding-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -1297,7 +1297,7 @@ body {
 }
 
 .featured-actions .action-btn i {
-    font-size: 35px;
+    font-size: 25px;
     transition: transform 0.2s ease;
 }
 
@@ -1332,6 +1332,29 @@ body {
 
 [data-theme="light"] .featured-actions .action-btn.active {
     color: var(--primary-color);
+}
+
+/* Circular backgrounds for download and share buttons */
+.featured-actions #download-btn-featured i,
+.featured-actions #share-btn-featured i {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="dark"] .featured-actions #download-btn-featured i,
+[data-theme="dark"] .featured-actions #share-btn-featured i {
+    background: white;
+    color: black;
+}
+
+[data-theme="light"] .featured-actions #download-btn-featured i,
+[data-theme="light"] .featured-actions #share-btn-featured i {
+    background: black;
+    color: white;
 }
 
 .action-btn.play-pause-btn-featured {
@@ -1842,7 +1865,7 @@ body {
 }
 
 .content-featured-image {
-    width: 90%;
+    width: 100%;
     height: auto;
     min-height: 280px;
     background: var(--bg-tertiary);

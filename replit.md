@@ -4,7 +4,19 @@
 A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a modern dark/light theme with orange accents, music player controls, and an intuitive mobile user experience. The site showcases DJ tracks, trending music, and mixtapes with a sleek, modern interface.
 
 ## Recent Changes
-**2025-10-14 - LATEST:** Enhanced UI & WhatsApp Booking Integration
+**2025-10-14 - LATEST:** MIXTAPE Rave Section & Informative Page Updates
+- **MIXTAPE - Rave of the Moment Enhancements:**
+  - Added 45px circular backgrounds behind Download and Share icons
+  - Download icon positioned on left, Share icon on right (center-aligned)
+  - Icons resized to 25px (reduced from 35px)
+  - Circular backgrounds: white in dark mode, black in light mode
+  - Backdrop bottom border-radius set to 0px (sharp bottom corners)
+- **Informative Page Featured Image:**
+  - Featured image width increased to 100% (from 90%)
+  - Auto height with center alignment on page layout
+  - Maintains minimum height of 280px for consistency
+
+**2025-10-14:** Enhanced UI & WhatsApp Booking Integration
 - **WhatsApp Booking Integration:**
   - Booking form now sends detailed booking information directly to DJ's WhatsApp (+2348129440095)
   - Formatted message includes client details, event details, and preferences
