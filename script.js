@@ -377,19 +377,24 @@ if (loadMoreBtn) {
 // Waveform visualization for featured player
 function drawWaveform() {
     const canvas = document.getElementById('waveform-canvas');
-    if (!canvas) return;
+    const albumArt = document.querySelector('.featured-album-art');
+    if (!canvas || !albumArt) return;
     
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
     
-    // Set canvas size with device pixel ratio
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
+    // Get album art dimensions to match waveform size
+    const albumRect = albumArt.getBoundingClientRect();
+    const targetWidth = albumRect.width;
+    const targetHeight = albumRect.height;
+    
+    // Set canvas size to match album art dimensions
+    canvas.width = targetWidth * dpr;
+    canvas.height = targetHeight * dpr;
     ctx.scale(dpr, dpr);
     
-    const width = rect.width;
-    const height = rect.height;
+    const width = targetWidth;
+    const height = targetHeight;
     const bars = 150;
     const barWidth = width / bars;
     
@@ -416,7 +421,8 @@ function drawWaveform() {
 
 // Initialize waveform on page load
 if (document.getElementById('waveform-canvas')) {
-    drawWaveform();
+    // Wait for album art to load before drawing waveform
+    setTimeout(drawWaveform, 100);
     window.addEventListener('resize', drawWaveform);
 }
 

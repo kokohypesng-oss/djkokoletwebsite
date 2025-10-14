@@ -1188,14 +1188,22 @@ body {
     margin-bottom: 0;
 }
 
+.featured-player-backdrop {
+    width: calc(100% - 20px);
+    margin: 15px 10px 0;
+    background: #808080;
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 .featured-player-card {
     width: auto;
     max-width: 100%;
-    margin: 15px auto 0;
+    margin: 0;
     background: var(--bg-secondary);
     border-radius: 0px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .featured-album-art {
@@ -1234,7 +1242,7 @@ body {
     height: auto;
     min-height: 50px;
     width: auto;
-    background: transparent;
+    background: #808080;
     gap: 15px;
 }
 
@@ -1342,15 +1350,21 @@ body {
 }
 
 .waveform-container {
-    padding: 10px 15px 10px;
+    width: calc(100% - 60px);
+    padding: 10px 0;
     margin: 0 auto;
     background: var(--bg-secondary);
     position: relative;
 }
 
+.waveform-container canvas {
+    display: block;
+    margin: 0 auto;
+}
+
 .waveform-display {
     width: 100%;
-    height: 25px;
+    height: auto;
     background: transparent;
 }
 

@@ -14,12 +14,18 @@ A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a m
   - Replaced single circular play/pause button with standard player controls (Previous, Play/Pause, Next)
   - Added CSS styling for `.player-controls-featured` and `.control-btn-featured`
   - Implemented JavaScript functionality for featured player controls
-  - **Structural Layout Update (Latest - 2025-10-14):**
+  - **Waveform & Backdrop Enhancement (Latest - 2025-10-14):**
+    - Waveform visualization width/height automatically matches album cover dimensions
+    - Created grey backdrop container (#808080) for entire "Rave of the Moment" section
+    - Backdrop width: calc(100% - 20px) with 10px margins (left & right)
+    - Backdrop bottom corners: 20px border-radius for modern rounded look
+    - Download/Controls/Share buttons on grey background within backdrop
+    - Buttons properly spaced with 20px padding from bottom
+    - JavaScript dynamically calculates waveform dimensions from album art
+  - **Previous Structural Updates:**
     - Album cover changed from square to rectangle (aspect-ratio: 16/9)
-    - Added 20px margin around album cover with reduced width: calc(100% - 60px)
-    - Moved Download/Controls/Share buttons OUTSIDE the player card container
-    - Action buttons background changed to transparent for cleaner look
-    - Buttons properly spaced with 20px top margin and 20px padding
+    - Album cover width: calc(100% - 60px) with 20px margin
+    - Player card contained within grey backdrop
   - **Previous Spacing Refinements:**
     - Track title padding-bottom: 10px
     - Gap between Download/Controls/Share buttons: 15px
