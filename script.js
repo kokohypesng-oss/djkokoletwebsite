@@ -693,3 +693,72 @@ function initializePagination() {
 if (document.querySelector('.pagination-container')) {
     initializePagination();
 }
+
+// Content Click Navigation
+function createSlug(text) {
+    return text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/--+/g, '-')
+        .trim();
+}
+
+function navigateToContent(category, title) {
+    const slug = createSlug(title);
+    const url = `/${category}/${slug}/`;
+    
+    // Store content data in sessionStorage for the informative page
+    sessionStorage.setItem('contentData', JSON.stringify({
+        category: category,
+        title: title,
+        url: url,
+        date: new Date().toLocaleDateString()
+    }));
+    
+    // Navigate to informative page
+    window.location.href = 'informative-page.html';
+}
+
+// Music List Items Click Handler
+document.querySelectorAll('.music-list-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const title = item.querySelector('h3').textContent;
+        const badge = item.querySelector('.music-badge span').textContent.toLowerCase();
+        navigateToContent(badge, title);
+    });
+});
+
+// Track Items Click Handler (Home page trending)
+document.querySelectorAll('.track-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+        if (!e.target.closest('.track-play-btn')) {
+            const title = item.querySelector('h4').textContent;
+            navigateToContent('home', title);
+        }
+    });
+});
+
+// Album Cards Click Handler
+document.querySelectorAll('.album-card').forEach(card => {
+    const originalClickHandler = card.onclick;
+    card.addEventListener('click', (e) => {
+        const title = card.querySelector('h4').textContent;
+        navigateToContent('artist', title);
+    });
+});
+
+// Load content data on informative page
+if (window.location.pathname.includes('informative-page.html')) {
+    const contentData = JSON.parse(sessionStorage.getItem('contentData') || '{}');
+    
+    if (contentData.title) {
+        document.getElementById('content-title').textContent = contentData.title;
+        document.getElementById('content-category').textContent = contentData.category.toUpperCase();
+        document.getElementById('content-date').textContent = contentData.date;
+        
+        // Update browser URL without reload
+        if (contentData.url && history.pushState) {
+            history.pushState({}, '', contentData.url);
+        }
+    }
+}
