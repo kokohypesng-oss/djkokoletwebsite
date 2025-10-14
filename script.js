@@ -419,3 +419,143 @@ if (document.getElementById('waveform-canvas')) {
     drawWaveform();
     window.addEventListener('resize', drawWaveform);
 }
+
+// Share Modal Functionality
+const shareModal = document.getElementById('share-modal');
+const shareBtnFeatured = document.getElementById('share-btn-featured');
+const closeShareModal = document.getElementById('close-share-modal');
+const shareOptions = document.querySelectorAll('.share-option');
+
+if (shareBtnFeatured && shareModal) {
+    // Open share modal
+    shareBtnFeatured.addEventListener('click', () => {
+        shareModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal on close button click
+    if (closeShareModal) {
+        closeShareModal.addEventListener('click', () => {
+            shareModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Close modal on background click
+    shareModal.addEventListener('click', (e) => {
+        if (e.target === shareModal) {
+            shareModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Handle share options
+    shareOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const platform = option.getAttribute('data-platform');
+            const trackTitle = 'Promphizy | Local Way';
+            const pageUrl = window.location.href;
+            const shareText = `Check out "${trackTitle}" on Kokohypes!`;
+            
+            let shareUrl = '';
+
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`;
+                    break;
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + pageUrl)}`;
+                    break;
+                case 'telegram':
+                    shareUrl = `https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+                    break;
+                case 'reddit':
+                    shareUrl = `https://reddit.com/submit?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(trackTitle)}`;
+                    break;
+                case 'copy':
+                    // Copy link to clipboard
+                    navigator.clipboard.writeText(pageUrl).then(() => {
+                        // Visual feedback
+                        const originalText = option.querySelector('span').textContent;
+                        option.querySelector('span').textContent = 'Copied!';
+                        option.style.borderColor = '#25d366';
+                        
+                        setTimeout(() => {
+                            option.querySelector('span').textContent = originalText;
+                            option.style.borderColor = '';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy link:', err);
+                        alert('Failed to copy link. Please try again.');
+                    });
+                    return;
+            }
+
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        });
+    });
+}
+
+// Download Functionality
+const downloadBtnFeatured = document.getElementById('download-btn-featured');
+
+if (downloadBtnFeatured) {
+    downloadBtnFeatured.addEventListener('click', () => {
+        const trackTitle = 'Promphizy - Local Way';
+        const fileName = `${trackTitle}.mp3`;
+        
+        // TODO: Replace with actual audio file URL from your server/CDN
+        // Example: const audioUrl = '/media/tracks/promphizy-local-way.mp3';
+        const audioUrl = null; // Set to actual file URL when available
+        
+        if (!audioUrl) {
+            // Demo mode notification
+            alert('Download functionality is ready! Please configure the audio file URL in the code to enable downloads.');
+            return;
+        }
+        
+        // Production download implementation
+        fetch(audioUrl)
+            .then(response => {
+                if (!response.ok) throw new Error('Download failed');
+                return response.blob();
+            })
+            .then(blob => {
+                // Create download link
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = fileName;
+                link.style.display = 'none';
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Clean up blob URL
+                window.URL.revokeObjectURL(url);
+                
+                // Visual feedback
+                const originalContent = downloadBtnFeatured.innerHTML;
+                downloadBtnFeatured.innerHTML = '<i class="fas fa-check"></i><span>Downloaded</span>';
+                downloadBtnFeatured.style.color = '#25d366';
+                
+                setTimeout(() => {
+                    downloadBtnFeatured.innerHTML = originalContent;
+                    downloadBtnFeatured.style.color = '';
+                }, 2000);
+            })
+            .catch(error => {
+                console.error('Download error:', error);
+                alert('Download failed. Please try again later.');
+            });
+    });
+}

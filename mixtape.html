@@ -37,14 +37,14 @@
                         <h2>Promphizy | Local Way</h2>
                     </div>
                     <div class="featured-actions">
-                        <button class="action-btn active" aria-label="Download">
+                        <button class="action-btn active" id="download-btn-featured" aria-label="Download">
                             <i class="fas fa-download"></i>
                             <span>Download</span>
                         </button>
                         <button class="action-btn play-pause-btn-featured" aria-label="Play/Pause">
                             <i class="fas fa-pause"></i>
                         </button>
-                        <button class="action-btn" aria-label="Share">
+                        <button class="action-btn" id="share-btn-featured" aria-label="Share">
                             <i class="fas fa-share-alt"></i>
                             <span>Share</span>
                         </button>
@@ -346,6 +346,47 @@
                 <span>MORE</span>
             </a>
         </nav>
+
+        <div id="share-modal" class="share-modal">
+            <div class="share-modal-content">
+                <div class="share-modal-header">
+                    <h3>Share "Promphizy | Local Way"</h3>
+                    <button class="share-modal-close" id="close-share-modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="share-modal-body">
+                    <button class="share-option" data-platform="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="share-option" data-platform="twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </button>
+                    <button class="share-option" data-platform="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                    <button class="share-option" data-platform="telegram">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </button>
+                    <button class="share-option" data-platform="linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </button>
+                    <button class="share-option" data-platform="reddit">
+                        <i class="fab fa-reddit-alien"></i>
+                        <span>Reddit</span>
+                    </button>
+                    <button class="share-option" data-platform="copy">
+                        <i class="fas fa-link"></i>
+                        <span>Copy Link</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
