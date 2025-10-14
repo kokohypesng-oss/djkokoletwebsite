@@ -22,15 +22,15 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 ## 2. BACKDROP CONTAINER (.featured-player-backdrop)
 
 ### Visual Properties:
-- **Width**: `calc(100% - 40px)` (reduces by 40px total)
-- **Margins**: `15px 20px 0` (top: 15px, sides: 20px, bottom: 0)
+- **Width**: `calc(100% - 60px)` (reduces by 60px total)
+- **Margins**: `15px auto 0` (top: 15px, auto-centered horizontally, bottom: 0)
 - **Background**: Theme-aware backdrop color
-  - **Light Mode**: Deep grey (`#4a4a4a`)
+  - **Light Mode**: Grey (`#4a4a4a`)
   - **Dark Mode**: Light grey (`#cccccc`)
-- **Border-Radius**: `0 0 20px 20px` (sharp top corners, 20px rounded bottom corners)
+- **Border-Radius**: `0 0 40px 40px` (sharp top corners, 40px rounded bottom corners)
 - **Padding-Bottom**: `20px`
 - **Shadow**: `0 4px 15px rgba(0, 0, 0, 0.3)` for depth
-- **Purpose**: Creates a contrasting backdrop that houses both the player card and action buttons
+- **Purpose**: Creates a contrasting backdrop that houses both the player card and action buttons, center-aligned without displacing bottom position
 
 ---
 
@@ -48,20 +48,21 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 
 #### 3.1 ALBUM COVER (.featured-album-art)
 - **Width**: `calc(100% - 60px)` (reduces by 60px from full width)
-- **Margin**: `20px auto` (20px top/bottom, auto-centered horizontally)
+- **Margin**: `20px auto 10px` (20px top, auto-centered, 10px bottom gap)
 - **Aspect Ratio**: `16:9` (rectangular, cinematic format)
 - **Background**: Tertiary background color (`var(--bg-tertiary)`)
 - **Display**: Flex container
 - **Alignment**: Items centered both horizontally and vertically
 - **Overflow**: Hidden to maintain clean edges
-- **Purpose**: Displays album artwork in a modern rectangular format
+- **Purpose**: Displays album artwork in a modern rectangular format with 10px gap to track title
 
 #### 3.2 TRACK TITLE (.featured-track-title)
 - **Text Alignment**: Center
-- **Padding**: `10px 15px 10px` (top: 10px, sides: 15px, bottom: 10px)
+- **Padding**: `0 15px 10px` (no top padding, 15px sides, 10px bottom)
+- **Margin-Top**: `10px` (10px gap from album cover)
 - **Background**: Secondary background (`var(--bg-secondary)`)
 
-**Title Text (h2)**:
+**Title Text (h3)**:
 - **Font Size**: `25px`
 - **Color**: Primary text color (`var(--text-primary)`)
 - **Margin**: `0` (no extra spacing)
@@ -100,13 +101,13 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 ### Container Properties:
 - **Display**: Flex layout for horizontal arrangement
 - **Alignment**: Items centered vertically
-- **Justify Content**: Space evenly distributed
-- **Padding**: `15px 20px` (top/bottom: 15px, sides: 20px)
-- **Margin**: `15px` (all sides)
+- **Justify Content**: Center distributed
+- **Padding**: `15px 10px` (top/bottom: 15px, sides: 10px)
+- **Margin**: `15px auto 0` (top: 15px, auto-centered horizontally, bottom: 0)
 - **Height**: Auto with `min-height: 40px`
-- **Width**: Auto-sized
+- **Width**: `calc(100% - 20px)` (reduced by 20px, center-aligned)
 - **Background**: Theme-aware backdrop color (`var(--backdrop-color)`)
-- **Gap**: `15px` between buttons
+- **Gap**: `10px` between buttons
 
 ### Components:
 
@@ -141,7 +142,7 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 **Container**:
 - **Display**: Flex layout
 - **Align Items**: Center
-- **Gap**: `20px` between control buttons
+- **Gap**: `10px` between control buttons
 
 **Previous Button (.control-btn-featured#prev-btn-featured)**:
 - **Background**: Transparent
@@ -149,22 +150,22 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 - **Color**: Primary text (`var(--text-primary)`)
 - **Cursor**: Pointer
 - **Transition**: All 0.2s ease
-- **Padding**: `0`
+- **Padding**: `8px`
 - **Display**: Flex center alignment
 - **Icon**: Step backward (`fa-step-backward`)
 - **Icon Size**: `30px`
 - **Hover**: Scales to 1.15x, changes to primary color
 
 **Play/Pause Button (.control-btn-featured.play-pause-btn-featured#play-pause-btn-featured)**:
-- **Width**: `65px`
-- **Height**: `65px`
+- **Width**: `75px`
+- **Height**: `75px`
 - **Border**: `2px solid var(--text-primary)`
 - **Border-Radius**: `50%` (perfect circle)
 - **Background**: Transparent
 - **Padding**: `0`
 - **Display**: Flex with centered alignment
 - **Icon**: Pause (`fa-pause`)
-- **Icon Size**: `28px`
+- **Icon Size**: `32px`
 - **Hover Effect**: 
   - Border changes to primary color
   - Text color changes to primary color
@@ -176,7 +177,7 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 - **Color**: Primary text (`var(--text-primary)`)
 - **Cursor**: Pointer
 - **Transition**: All 0.2s ease
-- **Padding**: `0`
+- **Padding**: `8px`
 - **Display**: Flex center alignment
 - **Icon**: Step forward (`fa-step-forward`)
 - **Icon Size**: `30px`
@@ -259,16 +260,17 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 
 **From Top to Bottom**:
 1. Section padding: `20px 15px`
-2. Backdrop margin-top: `15px`
-3. Album cover margin: `20px auto`
-4. Track title padding-bottom: `10px`
-5. Waveform padding: `10px 0`
-6. Time display margin-top: `-12px` (brings closer to waveform)
-7. Featured actions padding: `15px 20px`
-8. Featured actions margin: `15px`
-9. Gap between buttons: `20px` (controls), `15px` (actions)
-10. Backdrop padding-bottom: `20px`
-11. Backdrop border-radius bottom: `20px 20px`
+2. Backdrop margin-top: `15px`, auto-centered
+3. Album cover margin: `20px auto 10px` (10px gap to title)
+4. Track title margin-top: `10px` (10px gap from album)
+5. Track title padding-bottom: `10px`
+6. Waveform padding: `10px 0`
+7. Time display margin-top: `-12px` (brings closer to waveform)
+8. Featured actions padding: `15px 10px`
+9. Featured actions margin: `15px auto 0`, centered
+10. Gap between buttons: `10px` (both controls and actions)
+11. Backdrop padding-bottom: `20px`
+12. Backdrop border-radius bottom: `40px 40px`
 
 ---
 
@@ -276,13 +278,14 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 
 ### Size Progression (Largest to Smallest):
 1. **Album Cover**: Rectangular 16:9 ratio, `calc(100% - 60px)` width
-2. **Play/Pause Button**: `65px` circular button
-3. **Track Title**: `25px` font size
-4. **Control Icons**: `30px` (prev/next)
-5. **Action Icons**: `22px` (download/share)
-6. **Waveform**: `20px` height
-7. **Time Display**: `13px` font
-8. **Button Labels**: `11px` font
+2. **Play/Pause Button**: `75px` circular button
+3. **Play/Pause Icon**: `32px`
+4. **Track Title (H3)**: `25px` font size
+5. **Control Icons**: `30px` (prev/next)
+6. **Action Icons**: `22px` (download/share)
+7. **Waveform**: `20px` height
+8. **Time Display**: `13px` font
+9. **Button Labels**: `11px` font
 
 ### Color Contrast:
 - Sharp contrast between backdrop and player card
@@ -296,20 +299,21 @@ The "Rave of the Moment" section is a featured music player showcasing DJ Kokole
 
 ### Sharp Edges Aesthetic:
 - `border-radius: 0px` on player card for bold, modern look
-- Only bottom corners of backdrop are rounded (`20px 20px`)
-- Creates distinctive, contemporary design language
+- Only bottom corners of backdrop are rounded (`40px 40px`)
+- Creates distinctive, contemporary design language with pronounced corner radius
 
 ### Mobile-First Approach:
 - Width calculations account for mobile screens
-- Touch-friendly button sizes (65px play button, 50px action buttons)
+- Touch-friendly button sizes (75px play button, 50px action buttons)
 - Responsive padding and margins
 - Optimized for thumb reach and tap targets
 
 ### Visual Balance:
-- Centered alignment for all main elements
+- Centered alignment for all main elements (backdrop, actions, album, waveform)
 - Symmetrical spacing using auto margins
-- Equal gaps between interactive elements
-- Proportional reduction of widths (40px for backdrop, 60px for cover/waveform)
+- Consistent 10px gaps between interactive elements and album-to-title spacing
+- Proportional reduction of widths (60px for backdrop, 60px for cover/waveform, 20px for actions)
+- Bottom placement maintained while center-aligning containers
 
 ---
 
