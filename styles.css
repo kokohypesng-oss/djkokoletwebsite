@@ -1193,13 +1193,14 @@ body {
     max-width: 100%;
     margin: 15px auto 0;
     background: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .featured-album-art {
-    width: 100%;
+    width: calc(100% - 30px);
+    margin: 0 auto;
     aspect-ratio: 1;
     overflow: hidden;
     background: var(--bg-tertiary);
@@ -1311,7 +1312,7 @@ body {
 }
 
 .control-btn-featured i {
-    font-size: 20px;
+    font-size: 30px;
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
@@ -1324,15 +1325,15 @@ body {
 }
 
 .control-btn-featured.play-pause-btn-featured {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     border: 2px solid var(--text-primary);
     border-radius: 50%;
     padding: 0;
 }
 
 .control-btn-featured.play-pause-btn-featured i {
-    font-size: 18px;
+    font-size: 28px;
 }
 
 .control-btn-featured.play-pause-btn-featured:hover {
@@ -1348,14 +1349,14 @@ body {
 
 .waveform-display {
     width: 100%;
-    height: 60px;
+    height: 45px;
     background: transparent;
 }
 
 .time-display {
     display: flex;
     justify-content: space-between;
-    margin-top: 8px;
+    margin-top: -2px;
     font-size: 13px;
     color: var(--text-secondary);
 }
