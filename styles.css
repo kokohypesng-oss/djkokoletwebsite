@@ -1199,7 +1199,7 @@ body {
 }
 
 .featured-album-art {
-    width: calc(100% - 60px);
+    width: calc(100% - 90px);
     margin: 0 auto;
     aspect-ratio: 1;
     overflow: hidden;
@@ -1211,7 +1211,7 @@ body {
 
 .featured-track-title {
     text-align: center;
-    padding: 20px 15px 10px;
+    padding: 10px 15px 10px;
     background: var(--bg-secondary);
 }
 
@@ -1230,7 +1230,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-top: -30px;
+    margin-top: 50px;
     height: 50px;
     width: auto;
     background: var(--bg-secondary);
@@ -1324,8 +1324,8 @@ body {
 }
 
 .control-btn-featured.play-pause-btn-featured {
-    width: 55px;
-    height: 55px;
+    width: 65px;
+    height: 65px;
     border: 2px solid var(--text-primary);
     border-radius: 50%;
     padding: 0;
@@ -1342,6 +1342,7 @@ body {
 
 .waveform-container {
     padding: 10px 15px 20px;
+    margin-top: -20px;
     background: var(--bg-secondary);
     position: relative;
 }

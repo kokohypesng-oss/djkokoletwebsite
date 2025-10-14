@@ -19,9 +19,12 @@ A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a m
     - Reduced waveform visualization height from 60px to 25px (decreased by 35px total)
     - Brought time display much closer to waveform (margin-top: -12px)
     - Increased player control icons from 20px to 30px
-    - Increased play/pause button from 45px to 55px with icon from 18px to 28px
-    - Reduced album art size by 60px total and centered it (width: calc(100% - 60px))
-    - Moved controls section 30px closer to waveform (margin-top: -30px)
+    - Increased play/pause button from 55px to 65px with icon at 28px
+    - Reduced album art size by 90px total and centered it (width: calc(100% - 90px))
+    - Track title "Promphizy | Local Way" moved 10px closer to album art (padding-top: 10px)
+    - Waveform moved 20px closer to title (margin-top: -20px)
+    - Controls section positioned 80px away from waveform (margin-top: 50px)
+    - All elements centered for balanced layout
     - Removed border lines from controls section for cleaner look
 
 ## User Preferences
