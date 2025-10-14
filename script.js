@@ -619,3 +619,77 @@ if (nextBtnFeatured) {
 if (prevBtnFeatured) {
     prevBtnFeatured.addEventListener('click', playFeaturedPrevious);
 }
+
+// Pagination Logic for MUSIC and MIXTAPE pages
+function initializePagination() {
+    const musicListSection = document.querySelector('.music-list-section');
+    const paginationContainer = document.querySelector('.pagination-container');
+    
+    if (!musicListSection || !paginationContainer) {
+        return;
+    }
+    
+    const musicItems = Array.from(musicListSection.querySelectorAll('.music-list-item'));
+    const itemsPerPage = 15;
+    const totalPages = Math.ceil(musicItems.length / itemsPerPage);
+    let currentPage = 1;
+    
+    function showPage(pageNumber) {
+        currentPage = pageNumber;
+        
+        musicItems.forEach((item, index) => {
+            const itemPage = Math.floor(index / itemsPerPage) + 1;
+            item.style.display = itemPage === currentPage ? 'flex' : 'none';
+        });
+        
+        updatePaginationUI();
+    }
+    
+    function updatePaginationUI() {
+        paginationContainer.innerHTML = '';
+        
+        const maxVisiblePages = 4;
+        let startPage = Math.max(1, currentPage - 1);
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+        
+        if (endPage - startPage < maxVisiblePages - 1) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+        
+        for (let i = startPage; i <= endPage; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = i === currentPage ? 'page-number active' : 'page-number';
+            pageBtn.textContent = i;
+            pageBtn.addEventListener('click', () => showPage(i));
+            paginationContainer.appendChild(pageBtn);
+        }
+        
+        if (endPage < totalPages) {
+            const dots = document.createElement('button');
+            dots.className = 'page-dots';
+            dots.textContent = '...';
+            dots.disabled = true;
+            paginationContainer.appendChild(dots);
+            
+            const lastPageBtn = document.createElement('button');
+            lastPageBtn.className = 'page-number';
+            lastPageBtn.textContent = totalPages;
+            lastPageBtn.addEventListener('click', () => showPage(totalPages));
+            paginationContainer.appendChild(lastPageBtn);
+        }
+        
+        if (currentPage < totalPages) {
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'page-next';
+            nextBtn.innerHTML = '<i class="fas fa-arrow-right"></i>';
+            nextBtn.addEventListener('click', () => showPage(currentPage + 1));
+            paginationContainer.appendChild(nextBtn);
+        }
+    }
+    
+    showPage(1);
+}
+
+if (document.querySelector('.pagination-container')) {
+    initializePagination();
+}
