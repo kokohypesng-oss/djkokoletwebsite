@@ -971,6 +971,46 @@ if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Get form data
+        const formData = {
+            fullName: document.getElementById('full-name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            eventType: document.getElementById('event-type').value,
+            eventDate: document.getElementById('event-date').value,
+            eventTime: document.getElementById('event-time').value,
+            location: document.getElementById('event-location').value,
+            duration: document.getElementById('event-duration').value,
+            guestCount: document.getElementById('guest-count').value,
+            musicPreferences: document.getElementById('music-preferences').value || 'Not specified',
+            additionalDetails: document.getElementById('additional-details').value || 'None'
+        };
+        
+        // Create WhatsApp message
+        const message = `*New Booking Request*\n\n` +
+            `*Client Details:*\n` +
+            `Name: ${formData.fullName}\n` +
+            `Email: ${formData.email}\n` +
+            `Phone: ${formData.phone}\n\n` +
+            `*Event Details:*\n` +
+            `Type: ${formData.eventType}\n` +
+            `Date: ${formData.eventDate}\n` +
+            `Time: ${formData.eventTime}\n` +
+            `Location: ${formData.location}\n` +
+            `Duration: ${formData.duration} hours\n` +
+            `Expected Guests: ${formData.guestCount}\n\n` +
+            `*Preferences:*\n` +
+            `Music: ${formData.musicPreferences}\n\n` +
+            `*Additional Details:*\n${formData.additionalDetails}`;
+        
+        // WhatsApp API link - send to DJ Kokolet's number
+        const whatsappNumber = '2348129440095';
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+        
+        // Show success message
         const successOverlay = document.getElementById('success-overlay');
         
         if (successOverlay) {
