@@ -14,15 +14,18 @@ A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a m
   - Replaced single circular play/pause button with standard player controls (Previous, Play/Pause, Next)
   - Added CSS styling for `.player-controls-featured` and `.control-btn-featured`
   - Implemented JavaScript functionality for featured player controls
-  - **Professional Spacing Refinement (Latest Update - Final):**
-    - Track title padding-bottom: 10px (compact spacing to waveform)
+  - **Structural Layout Update (Latest - 2025-10-14):**
+    - Album cover changed from square to rectangle (aspect-ratio: 16/9)
+    - Added 20px margin around album cover with reduced width: calc(100% - 60px)
+    - Moved Download/Controls/Share buttons OUTSIDE the player card container
+    - Action buttons background changed to transparent for cleaner look
+    - Buttons properly spaced with 20px top margin and 20px padding
+  - **Previous Spacing Refinements:**
+    - Track title padding-bottom: 10px
     - Gap between Download/Controls/Share buttons: 15px
     - Waveform padding-bottom: 10px
-    - Controls section margin: auto (auto-centered)
-    - Album cover reduced by 30px: calc(100% - 120px)
     - Individual player control buttons gap: 20px
-    - All sections auto-centered within column (margin: 0 auto)
-    - Professional compact layout without elements touching
+    - All sections auto-centered within column
   - **Previous Fine-tuning:**
     - Set featured player card border-radius to 0px (sharp corners)
     - Reduced waveform visualization height to 25px

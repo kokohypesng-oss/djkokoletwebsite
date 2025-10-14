@@ -1199,9 +1199,9 @@ body {
 }
 
 .featured-album-art {
-    width: calc(100% - 120px);
-    margin: 0 auto;
-    aspect-ratio: 1;
+    width: calc(100% - 60px);
+    margin: 20px auto;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--bg-tertiary);
     display: flex;
@@ -1229,11 +1229,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    margin: auto;
-    height: 50px;
+    padding: 20px 10px;
+    margin: 20px auto 0;
+    height: auto;
+    min-height: 50px;
     width: auto;
-    background: var(--bg-secondary);
+    background: transparent;
     gap: 15px;
 }
 
