@@ -383,12 +383,12 @@ function drawWaveform() {
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
     
-    // Get album art dimensions to match waveform size
+    // Get album art width, use fixed 20px height
     const albumRect = albumArt.getBoundingClientRect();
     const targetWidth = albumRect.width;
-    const targetHeight = albumRect.height;
+    const targetHeight = 20;
     
-    // Set canvas size to match album art dimensions
+    // Set canvas size - width matches album, height is 20px
     canvas.width = targetWidth * dpr;
     canvas.height = targetHeight * dpr;
     ctx.scale(dpr, dpr);
