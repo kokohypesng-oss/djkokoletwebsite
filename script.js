@@ -1007,21 +1007,35 @@ if (bookingForm) {
         const whatsappNumber = '2348129440095';
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         
-        // Open WhatsApp in new tab
-        window.open(whatsappUrl, '_blank');
-        
-        // Show success message
+        // Show success message overlay with countdown
         const successOverlay = document.getElementById('success-overlay');
+        const countdownElement = document.getElementById('countdown');
         
         if (successOverlay) {
             successOverlay.classList.add('active');
             
-            setTimeout(() => {
-                successOverlay.classList.remove('active');
-                bookingForm.reset();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                location.reload();
-            }, 3000);
+            // 10-second countdown
+            let countdown = 10;
+            countdownElement.textContent = countdown;
+            
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    
+                    // Open WhatsApp after countdown
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Hide overlay and reset form
+                    setTimeout(() => {
+                        successOverlay.classList.remove('active');
+                        bookingForm.reset();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 1000);
+                }
+            }, 1000);
         }
     });
 }

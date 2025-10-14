@@ -21,10 +21,6 @@
                     </button>
                 </div>
             </div>
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search songs, artists, albums..." class="search-input">
-            </div>
         </header>
 
         <main class="main-content">
@@ -102,7 +98,7 @@
                             <textarea id="additional-details" name="additional-details" placeholder="Tell us more about your party, special requests, or any other information we should know..."></textarea>
                         </div>
 
-                        <button type="submit" class="submit-btn">Book Now</button>
+                        <button type="submit" class="submit-btn">BOOK NOW</button>
                     </form>
                 </div>
             </section>
@@ -110,34 +106,15 @@
             <!-- Success Message Overlay -->
             <div class="success-overlay" id="success-overlay">
                 <div class="success-message">
-                    <h2>Thank you for choosing us!</h2>
-                    <p>We'll get back to you shortly to confirm your booking.</p>
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Thank You for Choosing Us!</h2>
+                    <p>Please wait while we redirect you to WhatsApp...</p>
+                    <div class="countdown-timer" id="countdown">10</div>
                 </div>
             </div>
         </main>
-
-        <div class="mini-player">
-            <div class="player-track-info">
-                <div class="player-cover">
-                    <i class="fas fa-music"></i>
-                </div>
-                <div class="player-details">
-                    <h4>Select a track</h4>
-                    <p>Start playing music</p>
-                </div>
-            </div>
-            <div class="player-controls">
-                <button class="control-btn" id="prev-btn">
-                    <i class="fas fa-step-backward"></i>
-                </button>
-                <button class="control-btn play-pause-btn" id="play-pause-btn">
-                    <i class="fas fa-play"></i>
-                </button>
-                <button class="control-btn" id="next-btn">
-                    <i class="fas fa-step-forward"></i>
-                </button>
-            </div>
-        </div>
 
         <nav class="bottom-nav">
             <a href="/index.html" class="nav-item">
