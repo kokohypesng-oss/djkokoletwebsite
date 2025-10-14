@@ -1789,7 +1789,7 @@ body {
 
 .content-detail-container {
     background: var(--bg-secondary);
-    border-radius: 12px;
+    border-radius: 0px;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -1814,7 +1814,7 @@ body {
     background: var(--primary-color);
     color: white;
     padding: 4px 12px;
-    border-radius: 15px;
+    border-radius: 0px;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -1826,18 +1826,18 @@ body {
 }
 
 .content-featured-image {
-    width: 100%;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     background: var(--bg-tertiary);
-    border-radius: 8px;
+    border-radius: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
 }
 
 .content-featured-image i {
-    font-size: 60px;
+    font-size: 80px;
     color: var(--primary-color);
 }
 
@@ -1874,7 +1874,7 @@ body {
     padding: 12px 20px;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 0px;
     color: var(--text-primary);
     font-size: 14px;
     font-weight: 600;
@@ -1894,5 +1894,161 @@ body {
 
 .action-btn i {
     font-size: 16px;
+}
+
+/* Share Menu Popup for Informative Page */
+.share-popup {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0px;
+    padding: 10px;
+    display: none;
+    gap: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.share-popup.active {
+    display: flex;
+}
+
+.share-social-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.share-social-btn:active {
+    transform: scale(0.9);
+}
+
+.share-social-btn.facebook {
+    background: #1877F2;
+}
+
+.share-social-btn.instagram {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+.share-social-btn.tiktok {
+    background: #000000;
+}
+
+.share-social-btn.twitter {
+    background: #000000;
+}
+
+.share-social-btn.whatsapp {
+    background: #25D366;
+}
+
+/* Download Confirmation Banner */
+.download-banner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1001;
+    display: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.download-banner.active {
+    display: block;
+}
+
+.download-banner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: none;
+}
+
+.download-banner-overlay.active {
+    display: block;
+}
+
+.download-banner-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.download-file-details {
+    background: var(--bg-tertiary);
+    border-radius: 0px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.download-file-details p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.download-file-details strong {
+    color: var(--text-primary);
+}
+
+.download-banner-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.download-cancel-btn,
+.download-proceed-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.download-cancel-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.download-proceed-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.download-cancel-btn:active {
+    transform: scale(0.95);
+    background: var(--bg-dark);
+}
+
+.download-proceed-btn:active {
+    transform: scale(0.95);
+    background: var(--secondary-color);
 }
 

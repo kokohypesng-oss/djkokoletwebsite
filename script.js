@@ -761,4 +761,125 @@ if (window.location.pathname.includes('informative-page.html')) {
             history.pushState({}, '', contentData.url);
         }
     }
+    
+    // Play Button - Send track to top navigation player
+    const playContentBtn = document.getElementById('play-content-btn');
+    if (playContentBtn) {
+        playContentBtn.addEventListener('click', () => {
+            const trackInfo = {
+                id: Date.now(),
+                title: contentData.title || 'Unknown Track',
+                artist: contentData.artist || 'DJ Kokolet'
+            };
+            
+            // Update mini player with track info
+            const playerDetails = document.querySelector('.player-details');
+            if (playerDetails) {
+                playerDetails.querySelector('h4').textContent = trackInfo.title;
+                playerDetails.querySelector('p').textContent = trackInfo.artist;
+            }
+            
+            // Set playing state
+            isPlaying = true;
+            currentTrack = trackInfo;
+            updatePlayPauseIcon();
+        });
+    }
+    
+    // Share Button - Toggle share popup
+    const shareContentBtn = document.getElementById('share-content-btn');
+    const sharePopup = document.getElementById('share-popup');
+    const shareBtnWrapper = document.querySelector('.share-btn-wrapper');
+    
+    if (shareContentBtn && sharePopup) {
+        shareContentBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sharePopup.classList.toggle('active');
+        });
+        
+        // Close popup when clicking outside
+        document.addEventListener('click', (e) => {
+            if (shareBtnWrapper && !shareBtnWrapper.contains(e.target)) {
+                sharePopup.classList.remove('active');
+            }
+        });
+        
+        // Social media share handlers
+        const shareBtns = sharePopup.querySelectorAll('.share-social-btn');
+        shareBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const platform = btn.dataset.platform;
+                const url = window.location.href;
+                const text = `Check out: ${contentData.title || 'this track'} on Kokohypes!`;
+                
+                let shareUrl = '';
+                switch(platform) {
+                    case 'facebook':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                        break;
+                    case 'instagram':
+                        alert('Please share via Instagram app');
+                        return;
+                    case 'tiktok':
+                        alert('Please share via TikTok app');
+                        return;
+                    case 'twitter':
+                        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+                        break;
+                    case 'whatsapp':
+                        shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+                        break;
+                }
+                
+                if (shareUrl) {
+                    window.open(shareUrl, '_blank', 'width=600,height=400');
+                }
+                sharePopup.classList.remove('active');
+            });
+        });
+    }
+    
+    // Download Button - Show confirmation banner
+    const downloadContentBtn = document.getElementById('download-content-btn');
+    const downloadBanner = document.getElementById('download-banner');
+    const downloadOverlay = document.getElementById('download-overlay');
+    const downloadCancel = document.getElementById('download-cancel');
+    const downloadProceed = document.getElementById('download-proceed');
+    
+    if (downloadContentBtn && downloadBanner && downloadOverlay) {
+        downloadContentBtn.addEventListener('click', () => {
+            // Update download details
+            document.getElementById('download-file-name').textContent = (contentData.title || 'Track') + '.mp3';
+            document.getElementById('download-file-artist').textContent = contentData.artist || 'DJ Kokolet';
+            document.getElementById('download-file-size').textContent = '5.2 MB';
+            
+            // Show banner
+            downloadBanner.classList.add('active');
+            downloadOverlay.classList.add('active');
+        });
+        
+        // Cancel download
+        if (downloadCancel) {
+            downloadCancel.addEventListener('click', () => {
+                downloadBanner.classList.remove('active');
+                downloadOverlay.classList.remove('active');
+            });
+        }
+        
+        // Close on overlay click
+        downloadOverlay.addEventListener('click', () => {
+            downloadBanner.classList.remove('active');
+            downloadOverlay.classList.remove('active');
+        });
+        
+        // Proceed with download
+        if (downloadProceed) {
+            downloadProceed.addEventListener('click', () => {
+                alert('Download started! (Demo: In production, this would download the .mp3 file)');
+                downloadBanner.classList.remove('active');
+                downloadOverlay.classList.remove('active');
+            });
+        }
+    }
 }

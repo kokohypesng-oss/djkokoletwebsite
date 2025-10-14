@@ -58,15 +58,34 @@
                     </div>
 
                     <div class="content-actions">
-                        <button class="action-btn play-content-btn">
+                        <button class="action-btn play-content-btn" id="play-content-btn">
                             <i class="fas fa-play"></i>
                             <span>Play</span>
                         </button>
-                        <button class="action-btn share-content-btn">
-                            <i class="fas fa-share-alt"></i>
-                            <span>Share</span>
-                        </button>
-                        <button class="action-btn download-content-btn">
+                        <div class="share-btn-wrapper" style="position: relative; flex: 1;">
+                            <button class="action-btn share-content-btn" id="share-content-btn">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share</span>
+                            </button>
+                            <div class="share-popup" id="share-popup">
+                                <button class="share-social-btn facebook" data-platform="facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button class="share-social-btn instagram" data-platform="instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </button>
+                                <button class="share-social-btn tiktok" data-platform="tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                </button>
+                                <button class="share-social-btn twitter" data-platform="twitter">
+                                    <i class="fab fa-x-twitter"></i>
+                                </button>
+                                <button class="share-social-btn whatsapp" data-platform="whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="action-btn download-content-btn" id="download-content-btn">
                             <i class="fas fa-download"></i>
                             <span>Download</span>
                         </button>
@@ -74,6 +93,21 @@
                 </div>
             </section>
         </main>
+
+        <!-- Download Confirmation Banner -->
+        <div class="download-banner-overlay" id="download-overlay"></div>
+        <div class="download-banner" id="download-banner">
+            <h3 class="download-banner-header">Confirm Download</h3>
+            <div class="download-file-details">
+                <p><strong>File:</strong> <span id="download-file-name">Track.mp3</span></p>
+                <p><strong>Artist:</strong> <span id="download-file-artist">DJ Kokolet</span></p>
+                <p><strong>Size:</strong> <span id="download-file-size">5.2 MB</span></p>
+            </div>
+            <div class="download-banner-actions">
+                <button class="download-cancel-btn" id="download-cancel">Cancel</button>
+                <button class="download-proceed-btn" id="download-proceed">Download</button>
+            </div>
+        </div>
 
         <div class="mini-player">
             <div class="player-track-info">
