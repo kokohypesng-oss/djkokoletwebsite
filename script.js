@@ -373,3 +373,49 @@ if (loadMoreBtn) {
         }
     });
 }
+
+// Waveform visualization for featured player
+function drawWaveform() {
+    const canvas = document.getElementById('waveform-canvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    
+    // Set canvas size with device pixel ratio
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+    
+    const width = rect.width;
+    const height = rect.height;
+    const bars = 150;
+    const barWidth = width / bars;
+    
+    // Clear canvas
+    ctx.clearRect(0, 0, width, height);
+    
+    // Generate waveform bars
+    for (let i = 0; i < bars; i++) {
+        const barHeight = Math.random() * height * 0.8 + height * 0.1;
+        const x = i * barWidth;
+        const y = (height - barHeight) / 2;
+        
+        // Color gradient - orange for played portion, gray for remaining
+        const playProgress = 0.15; // 0:04 / 2:56 ≈ 0.023 but let's show more
+        if (i / bars < playProgress) {
+            ctx.fillStyle = '#ff6c3e';
+        } else {
+            ctx.fillStyle = '#444444';
+        }
+        
+        ctx.fillRect(x, y, barWidth - 1, barHeight);
+    }
+}
+
+// Initialize waveform on page load
+if (document.getElementById('waveform-canvas')) {
+    drawWaveform();
+    window.addEventListener('resize', drawWaveform);
+}

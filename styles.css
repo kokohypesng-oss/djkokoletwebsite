@@ -1180,6 +1180,169 @@ body {
     text-decoration: underline;
 }
 
+/* Rave of the Moment Section */
+.rave-moment-section {
+    padding: 20px 15px;
+    background: var(--bg-dark);
+    border-bottom: 1px solid #444;
+    margin-bottom: 0;
+}
+
+.featured-player-card {
+    width: auto;
+    max-width: 100%;
+    margin: 15px auto 0;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.featured-album-art {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--bg-tertiary);
+}
+
+.featured-album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-track-title {
+    text-align: center;
+    padding: 20px 15px 10px;
+    background: var(--bg-secondary);
+}
+
+.featured-track-title h3 {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin: 0 0 8px 0;
+    font-weight: 400;
+}
+
+.featured-track-title h4 {
+    font-size: 24px;
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 700;
+}
+
+.featured-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 10px;
+    height: 60px;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 5px 8px;
+}
+
+.action-btn i {
+    font-size: 22px;
+    transition: transform 0.2s ease;
+}
+
+.action-btn span {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.action-btn:hover i {
+    transform: scale(1.1);
+}
+
+.action-btn.active {
+    color: var(--primary-color);
+}
+
+.action-btn.active i {
+    color: var(--primary-color);
+}
+
+.waveform-container {
+    padding: 20px 15px 15px;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.waveform-display {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.featured-player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 15px 25px;
+    background: var(--bg-secondary);
+}
+
+.player-ctrl-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 8px;
+}
+
+.player-ctrl-btn i {
+    font-size: 24px;
+}
+
+.player-ctrl-btn:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.player-ctrl-btn.play-btn-large {
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--text-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-ctrl-btn.play-btn-large i {
+    font-size: 28px;
+}
+
+.player-ctrl-btn.play-btn-large:hover {
+    border-color: var(--primary-color);
+}
+
 .music-category-heading {
     font-family: 'Gothic A1', sans-serif;
     font-size: 28px;
