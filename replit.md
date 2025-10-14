@@ -16,11 +16,13 @@ A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a m
   - Implemented JavaScript functionality for featured player controls
   - **Fine-tuned player styling:**
     - Set featured player card border-radius to 0px (sharp corners)
-    - Reduced waveform visualization height from 60px to 45px
-    - Brought time display closer to waveform (margin-top: -2px)
+    - Reduced waveform visualization height from 60px to 25px (decreased by 35px total)
+    - Brought time display much closer to waveform (margin-top: -12px)
     - Increased player control icons from 20px to 30px
     - Increased play/pause button from 45px to 55px with icon from 18px to 28px
-    - Reduced album art size by 30px and centered it (width: calc(100% - 30px))
+    - Reduced album art size by 60px total and centered it (width: calc(100% - 60px))
+    - Moved controls section 30px closer to waveform (margin-top: -30px)
+    - Removed border lines from controls section for cleaner look
 
 ## User Preferences
 No specific user preferences documented yet.
