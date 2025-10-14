@@ -16,6 +16,7 @@
     --text-secondary: #b3b3b3;
     --border-color: #333;
     --backdrop-color: #cccccc;
+    --backdrop-text: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +38,7 @@
     --text-secondary: #666666;
     --border-color: #ddd;
     --backdrop-color: #4a4a4a;
+    --backdrop-text: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -47,6 +49,7 @@
     --text-secondary: #b3b3b3;
     --border-color: #333;
     --backdrop-color: #cccccc;
+    --backdrop-text: #000000;
 }
 
 body {
@@ -1097,7 +1100,7 @@ body {
 .trending-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
     margin-bottom: 20px;
     border-radius: 0px;
 }
@@ -1195,7 +1198,7 @@ body {
     width: calc(100% - 60px);
     margin: 15px auto 0;
     background: var(--backdrop-color);
-    border-radius: 0 0 40px 40px;
+    border-radius: 0px;
     padding-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -1222,13 +1225,14 @@ body {
 
 .featured-track-title {
     text-align: center;
-    padding: 0 15px 10px;
+    padding: 0 15px;
     margin-top: 10px;
+    margin-bottom: 10px;
     background: var(--bg-secondary);
 }
 
 .featured-track-title h3 {
-    font-size: 25px;
+    font-size: 18px;
     color: var(--text-primary);
     margin: 0;
     font-weight: 600;
@@ -1247,7 +1251,7 @@ body {
     min-height: 40px;
     width: calc(100% - 20px);
     background: var(--backdrop-color);
-    gap: 10px;
+    gap: 5px;
 }
 
 .action-btn {
@@ -1265,12 +1269,12 @@ body {
 }
 
 .action-btn i {
-    font-size: 22px;
+    font-size: 20px;
     transition: transform 0.2s ease;
 }
 
 .action-btn span {
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
 }
 
@@ -1308,13 +1312,14 @@ body {
 .player-controls-featured {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 5px;
 }
 
 .control-btn-featured {
     background: transparent;
     border: none;
-    color: var(--text-primary);
+    color: var(--backdrop-text);
     cursor: pointer;
     transition: all 0.2s ease;
     padding: 8px;
@@ -1337,19 +1342,27 @@ body {
 }
 
 .control-btn-featured.play-pause-btn-featured {
-    width: 75px;
-    height: 75px;
-    border: 2px solid var(--text-primary);
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--backdrop-text);
     border-radius: 50%;
     padding: 0;
 }
 
 .control-btn-featured.play-pause-btn-featured i {
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .control-btn-featured.play-pause-btn-featured:hover {
     border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.featured-actions .action-btn {
+    color: var(--backdrop-text);
+}
+
+.featured-actions .action-btn.active {
     color: var(--primary-color);
 }
 
