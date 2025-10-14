@@ -324,22 +324,15 @@ body {
     margin: 15px 0;
 }
 
-.show-more-container::before,
 .show-more-container::after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80%;
     height: 1px;
     background-color: #444;
-}
-
-.show-more-container::before {
-    top: 0;
-}
-
-.show-more-container::after {
-    bottom: 0;
 }
 
 .show-more-btn {
@@ -1287,14 +1280,18 @@ body {
 .ad-banner {
     background: white;
     padding: 30px 20px;
-    margin: 20px 15px 30px;
+    margin: 20px auto 30px;
     border-radius: 0px;
+    width: 40%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ad-content {
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .ad-title {
@@ -1324,6 +1321,18 @@ body {
     text-decoration: underline;
 }
 
+.ad-link-hover {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ad-link-hover:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -1332,8 +1341,8 @@ body {
 }
 
 .social-icon {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     background: #4a4a4a;
     display: flex;
     align-items: center;
@@ -1344,8 +1353,8 @@ body {
 }
 
 .social-icon i {
-    color: #000000;
-    font-size: 45px;
+    color: #ffffff;
+    font-size: 35px;
 }
 
 .social-icon:hover {
