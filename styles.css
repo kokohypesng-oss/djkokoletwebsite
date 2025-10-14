@@ -326,8 +326,8 @@ body {
 
 .show-more-container {
     position: relative;
-    padding: 25px 0;
-    margin: 15px 0;
+    padding: 10px 0;
+    margin: 5px 0 15px 0;
 }
 
 .show-more-container::after {
@@ -466,8 +466,8 @@ body {
 }
 
 .track-cover-small {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 0px;
     display: flex;
@@ -1411,7 +1411,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    padding: 20px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: background-color 0.2s;
