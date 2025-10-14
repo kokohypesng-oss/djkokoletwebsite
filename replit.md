@@ -59,7 +59,7 @@ The application runs on Python's built-in HTTP server at port 5000. The server i
   - **Advertisement Banner Enhancement** (MUSIC & MIXTAPE pages):
     - Updated phone number to +2348129440095 with orange color and hover effects
     - Updated website link to www.kokohypes.ng with orange color and hover effects
-    - Banner now center-aligned with professional layout (40% width, 100% height)
+    - Banner now center-aligned with professional layout (100% width, 40% height)
     - Social media icons resized to 70px × 70px with white logos on dark gray background
     - All contact links have smooth hover transitions with opacity effects
   - **SHOW MORE POSTS Button Styling** (HOME page):
