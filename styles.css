@@ -1215,7 +1215,7 @@ body {
 }
 
 .featured-track-title h2 {
-    font-size: 22px;
+    font-size: 25px;
     color: var(--text-primary);
     margin: 0;
     font-weight: 600;
@@ -1226,13 +1226,15 @@ body {
 
 .featured-actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 15px 10px;
-    height: 60px;
+    padding: 10px;
+    height: 50px;
+    width: auto;
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    gap: 20px;
 }
 
 .action-btn {
@@ -1246,6 +1248,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     padding: 5px 8px;
+    height: 50px;
 }
 
 .action-btn i {
@@ -1270,8 +1273,27 @@ body {
     color: var(--primary-color);
 }
 
+.action-btn.play-pause-btn-featured {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--text-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.action-btn.play-pause-btn-featured i {
+    font-size: 20px;
+}
+
+.action-btn.play-pause-btn-featured:hover {
+    border-color: var(--primary-color);
+}
+
 .waveform-container {
-    padding: 20px 15px 10px;
+    padding: 10px 15px 20px;
     background: var(--bg-secondary);
     position: relative;
 }
@@ -1288,57 +1310,6 @@ body {
     margin-top: 8px;
     font-size: 13px;
     color: var(--text-secondary);
-}
-
-.featured-player-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 10px 15px 20px;
-    background: var(--bg-secondary);
-    height: 35px;
-    width: auto;
-}
-
-.player-ctrl-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 4px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.player-ctrl-btn i {
-    font-size: 20px;
-}
-
-.player-ctrl-btn:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-.player-ctrl-btn.play-btn-large {
-    width: 50px;
-    height: 35px;
-    border: 2px solid var(--text-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.player-ctrl-btn.play-btn-large i {
-    font-size: 20px;
-}
-
-.player-ctrl-btn.play-btn-large:hover {
-    border-color: var(--primary-color);
 }
 
 .music-category-heading {
