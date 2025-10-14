@@ -559,3 +559,57 @@ if (downloadBtnFeatured) {
             });
     });
 }
+
+// Featured Player Controls
+const playPauseBtnFeatured = document.getElementById('play-pause-btn-featured');
+const prevBtnFeatured = document.getElementById('prev-btn-featured');
+const nextBtnFeatured = document.getElementById('next-btn-featured');
+
+let isFeaturedPlaying = true;
+let featuredTrackIndex = 0;
+
+const featuredTracks = [
+    { title: 'Promphizy | Local Way', artist: 'Promphizy' },
+    { title: 'Summer Vibes 2025', artist: 'DJ Kokolet' },
+    { title: 'Midnight Dreams', artist: 'The Soundwaves' }
+];
+
+function updateFeaturedPlayerIcon() {
+    if (playPauseBtnFeatured) {
+        const icon = playPauseBtnFeatured.querySelector('i');
+        if (isFeaturedPlaying) {
+            icon.className = 'fas fa-pause';
+        } else {
+            icon.className = 'fas fa-play';
+        }
+    }
+}
+
+function toggleFeaturedPlayPause() {
+    isFeaturedPlaying = !isFeaturedPlaying;
+    updateFeaturedPlayerIcon();
+}
+
+function playFeaturedNext() {
+    featuredTrackIndex = (featuredTrackIndex + 1) % featuredTracks.length;
+    isFeaturedPlaying = true;
+    updateFeaturedPlayerIcon();
+}
+
+function playFeaturedPrevious() {
+    featuredTrackIndex = (featuredTrackIndex - 1 + featuredTracks.length) % featuredTracks.length;
+    isFeaturedPlaying = true;
+    updateFeaturedPlayerIcon();
+}
+
+if (playPauseBtnFeatured) {
+    playPauseBtnFeatured.addEventListener('click', toggleFeaturedPlayPause);
+}
+
+if (nextBtnFeatured) {
+    nextBtnFeatured.addEventListener('click', playFeaturedNext);
+}
+
+if (prevBtnFeatured) {
+    prevBtnFeatured.addEventListener('click', playFeaturedPrevious);
+}

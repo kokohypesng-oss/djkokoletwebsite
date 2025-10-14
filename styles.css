@@ -1292,6 +1292,54 @@ body {
     border-color: var(--primary-color);
 }
 
+.player-controls-featured {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.control-btn-featured {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn-featured i {
+    font-size: 20px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.control-btn-featured:hover {
+    color: var(--primary-color);
+}
+
+.control-btn-featured:hover i {
+    transform: scale(1.15);
+}
+
+.control-btn-featured.play-pause-btn-featured {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--text-primary);
+    border-radius: 50%;
+    padding: 0;
+}
+
+.control-btn-featured.play-pause-btn-featured i {
+    font-size: 18px;
+}
+
+.control-btn-featured.play-pause-btn-featured:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
 .waveform-container {
     padding: 10px 15px 20px;
     background: var(--bg-secondary);
