@@ -1211,7 +1211,7 @@ body {
 
 .featured-track-title {
     text-align: center;
-    padding: 10px 15px 20px;
+    padding: 10px 15px 15px;
     background: var(--bg-secondary);
 }
 
@@ -1230,11 +1230,11 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-top: 30px;
+    margin-top: auto;
     height: 50px;
     width: auto;
     background: var(--bg-secondary);
-    gap: 35px;
+    gap: 25px;
 }
 
 .action-btn {
@@ -1342,6 +1342,7 @@ body {
 
 .waveform-container {
     padding: 10px 15px 20px;
+    padding-bottom: 20px;
     margin-top: 0px;
     background: var(--bg-secondary);
     position: relative;
