@@ -1153,7 +1153,7 @@ body {
 .music-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin: 20px;
 }
 
@@ -1162,6 +1162,7 @@ body {
     width: 100%;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .music-card:hover .music-card-image {
@@ -1201,8 +1202,8 @@ body {
 }
 
 .music-card-cover {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: white;
     border-radius: 50%;
     display: flex;
@@ -1211,7 +1212,7 @@ body {
 }
 
 .music-card-cover i {
-    font-size: 28px;
+    font-size: 24px;
     color: #ff6b9d;
 }
 
@@ -1221,7 +1222,7 @@ body {
 }
 
 .music-card-info h4 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     margin: 0 0 3px 0;
     color: var(--text-primary);
@@ -1229,8 +1230,8 @@ body {
 }
 
 .music-card-info p {
-    font-size: 10px;
-    margin: 0;
+    font-size: 12px;
+    margin: 0 0 10px 0;
     font-weight: 500;
     color: var(--text-secondary);
     line-height: 1.3;
