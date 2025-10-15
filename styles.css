@@ -1153,7 +1153,7 @@ body {
 .music-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 40px;
     margin: 20px;
 }
 
@@ -1231,7 +1231,7 @@ body {
 
 .music-card-info p {
     font-size: 12px;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     font-weight: 500;
     color: var(--text-secondary);
     line-height: 1.3;

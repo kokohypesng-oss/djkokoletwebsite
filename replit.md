@@ -13,10 +13,10 @@ A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a m
   - Bold titles (16px, font-weight: 700) followed by medium artist names (12px, font-weight: 500)
   - White circular CD icon backgrounds (50px x 50px) with pink icons (24px) centered inside cards
   - Ranking badges (1-4) displayed in top-left corner of each card image
-  - 10px gap between cards for compact layout
+  - 40px gap between cards for optimal visual spacing
   - 10px padding inside each card for compact design
   - 3px spacing between title and artist name
-  - 10px gap below artist name for clean separation
+  - 5px gap below artist name for clean separation
   - 20px margin on all sides (top, left, right, bottom)
   - Displays 4 featured tracks: Midnight Mix, Urban Beats, Summer Vibes, Night Drive
 - **"SEE MORE POSTS" Link:**
