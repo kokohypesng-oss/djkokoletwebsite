@@ -1154,7 +1154,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .music-card {
@@ -1201,8 +1201,8 @@ body {
 }
 
 .music-card-cover {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: white;
     border-radius: 50%;
     display: flex;
@@ -1211,7 +1211,7 @@ body {
 }
 
 .music-card-cover i {
-    font-size: 38px;
+    font-size: 28px;
     color: #ff6b9d;
 }
 
@@ -1221,7 +1221,7 @@ body {
 }
 
 .music-card-info h4 {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 3px 0;
     color: var(--text-primary);
@@ -1229,7 +1229,7 @@ body {
 }
 
 .music-card-info p {
-    font-size: 9px;
+    font-size: 10px;
     margin: 0;
     font-weight: 500;
     color: var(--text-secondary);
