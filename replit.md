@@ -13,7 +13,7 @@ A mobile-first music streaming website for DJ Kokolet (Kokohypes), featuring a m
   - Bold titles (16px, font-weight: 700) followed by medium artist names (12px, font-weight: 500)
   - White circular CD icon backgrounds (50px x 50px) with pink icons (24px) centered inside cards
   - Ranking badges (1-4) displayed in top-left corner of each card image
-  - 40px gap between cards for optimal visual spacing
+  - 10px gap between cards for compact layout
   - 10px padding inside each card for compact design
   - 3px spacing between title and artist name
   - 10px gap below artist name for clean separation
