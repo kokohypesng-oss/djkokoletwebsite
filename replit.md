@@ -30,7 +30,7 @@ No specific user preferences documented yet.
     - Theme-aware circular dial buttons with gradient backgrounds and interactive animations
     - Bottom row arrangement: GO (bottom-left with vibrant gradients), 0 (center), Backspace (bottom-right for deleting digits)
     - GO button with lemon gradient and bright green glow (light mode) / yellow gradient with deep golden glow (dark mode)
-    - Ultra-compact spacing: Zero margin between welcome and input, -40px margin-top on dial pad for tight integration
+    - Ultra-compact spacing: -40px margin-top on input section (pulls input closer to welcome), -40px margin-top on dial pad for maximum tight integration
     - Flip-up 3D transition (600ms) reveals booking form after validation when 10+ characters entered
     - WhatsApp number stored in sessionStorage for form submission
     - **Booking Form:** Comprehensive form with fields for event details, client information, and direct WhatsApp integration for submission.
