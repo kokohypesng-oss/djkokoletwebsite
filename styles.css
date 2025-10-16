@@ -2269,7 +2269,7 @@ body {
 
 .dialer-welcome {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .dialer-welcome h2 {
@@ -2387,14 +2387,14 @@ body {
 
 [data-theme="light"] .dial-btn-go {
     background: linear-gradient(145deg, #fff44f, #ffed4e) !important;
-    box-shadow: 0 4px 15px rgba(255, 237, 78, 0.5),
+    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.6),
                 inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
     color: #333;
 }
 
 [data-theme="dark"] .dial-btn-go {
     background: linear-gradient(145deg, #ffeb3b, #ffd700) !important;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4),
+    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.7),
                 inset 0 1px 2px rgba(255, 255, 255, 0.1) !important;
     color: #1a1a1a;
 }
