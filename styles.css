@@ -2269,7 +2269,7 @@ body {
 
 .dialer-welcome {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .dialer-welcome h2 {
@@ -2376,6 +2376,41 @@ body {
 
 .dial-btn-backspace i {
     color: var(--text-primary);
+}
+
+.dial-btn-go {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+}
+
+[data-theme="light"] .dial-btn-go {
+    background: linear-gradient(145deg, #fff44f, #ffed4e) !important;
+    box-shadow: 0 4px 15px rgba(255, 237, 78, 0.5),
+                inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+    color: #333;
+}
+
+[data-theme="dark"] .dial-btn-go {
+    background: linear-gradient(145deg, #ffeb3b, #ffd700) !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4),
+                inset 0 1px 2px rgba(255, 255, 255, 0.1) !important;
+    color: #1a1a1a;
+}
+
+.dial-btn-go:hover {
+    transform: scale(1.08) !important;
+}
+
+.dial-btn-go:active {
+    transform: scale(0.92) !important;
+}
+
+.dial-btn-go:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
 }
 
 .get-started-btn {

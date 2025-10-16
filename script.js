@@ -969,7 +969,7 @@ if (window.location.pathname.includes('informative-page.html')) {
 const dialerSection = document.getElementById('dialer-section');
 const bookingSection = document.getElementById('booking-section');
 const whatsappInput = document.getElementById('whatsapp-number');
-const getStartedBtn = document.getElementById('get-started-btn');
+const getStartedBtn = document.getElementById('go-btn');
 const dialButtons = document.querySelectorAll('.dial-btn');
 const backspaceBtn = document.getElementById('backspace-btn');
 
@@ -993,6 +993,11 @@ if (dialButtons.length > 0 && whatsappInput) {
     dialButtons.forEach(button => {
         button.addEventListener('click', function() {
             const number = this.getAttribute('data-number');
+            
+            // Skip GO button - it has its own handler
+            if (this.id === 'go-btn') {
+                return;
+            }
             
             // Only add number if it has a data-number attribute (skip backspace)
             if (number) {
@@ -1037,7 +1042,7 @@ if (dialButtons.length > 0 && whatsappInput) {
     }
 }
 
-// Handle GET STARTED button click
+// Handle GO button click
 if (getStartedBtn && dialerSection && bookingSection) {
     // Initially disable the button
     getStartedBtn.disabled = true;
