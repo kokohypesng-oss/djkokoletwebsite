@@ -971,13 +971,14 @@ const bookingSection = document.getElementById('booking-section');
 const whatsappInput = document.getElementById('whatsapp-number');
 const getStartedBtn = document.getElementById('get-started-btn');
 const dialButtons = document.querySelectorAll('.dial-btn');
+const backspaceBtn = document.getElementById('backspace-btn');
 
 if (dialButtons.length > 0 && whatsappInput) {
     // Function to validate and update button state
     function validateAndUpdateButton() {
         if (getStartedBtn && whatsappInput) {
-            // Clean input - allow only numbers, +, and #
-            whatsappInput.value = whatsappInput.value.replace(/[^0-9+#]/g, '');
+            // Clean input - allow only numbers and +
+            whatsappInput.value = whatsappInput.value.replace(/[^0-9+]/g, '');
             
             // Enable/disable get started button based on length
             if (whatsappInput.value.length >= 10) {
@@ -992,10 +993,37 @@ if (dialButtons.length > 0 && whatsappInput) {
     dialButtons.forEach(button => {
         button.addEventListener('click', function() {
             const number = this.getAttribute('data-number');
+            
+            // Only add number if it has a data-number attribute (skip backspace)
+            if (number) {
+                const currentValue = whatsappInput.value;
+                
+                // Remove readonly temporarily to update value
+                whatsappInput.removeAttribute('readonly');
+                whatsappInput.value = currentValue + number;
+                whatsappInput.setAttribute('readonly', 'true');
+                
+                // Validate and update button state
+                validateAndUpdateButton();
+            }
+            
+            // Add click animation
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 100);
+        });
+    });
+    
+    // Handle backspace button
+    if (backspaceBtn) {
+        backspaceBtn.addEventListener('click', function() {
             const currentValue = whatsappInput.value;
             
-            // Add number to input
-            whatsappInput.value = currentValue + number;
+            // Remove readonly temporarily to update value
+            whatsappInput.removeAttribute('readonly');
+            whatsappInput.value = currentValue.slice(0, -1);
+            whatsappInput.setAttribute('readonly', 'true');
             
             // Validate and update button state
             validateAndUpdateButton();
@@ -1006,22 +1034,7 @@ if (dialButtons.length > 0 && whatsappInput) {
                 this.style.transform = '';
             }, 100);
         });
-    });
-    
-    // Handle backspace key
-    whatsappInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Backspace') {
-            // Let default behavior handle backspace, then validate
-            setTimeout(() => {
-                validateAndUpdateButton();
-            }, 0);
-        }
-    });
-    
-    // Validate phone number on input (for keyboard typing)
-    whatsappInput.addEventListener('input', function(e) {
-        validateAndUpdateButton();
-    });
+    }
 }
 
 // Handle GET STARTED button click
@@ -1040,6 +1053,16 @@ if (getStartedBtn && dialerSection && bookingSection) {
         
         // Store WhatsApp number for later use
         sessionStorage.setItem('whatsappNumber', phoneNumber);
+        
+        // Auto-attach WhatsApp number to Phone Number field in booking form
+        const phoneField = document.getElementById('phone');
+        if (phoneField) {
+            phoneField.value = phoneNumber;
+            phoneField.setAttribute('readonly', 'true');
+            // Add visual indication that field is readonly
+            phoneField.style.backgroundColor = 'var(--bg-tertiary)';
+            phoneField.style.cursor = 'not-allowed';
+        }
         
         // Start flip-up animation
         dialerSection.classList.add('flip-up');
