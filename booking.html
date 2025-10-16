@@ -24,7 +24,39 @@
         </header>
 
         <main class="main-content">
-            <section class="booking-section">
+            <!-- Phone Dialer Interface -->
+            <section class="dialer-section" id="dialer-section">
+                <div class="dialer-container">
+                    <div class="dialer-welcome">
+                        <h2>Welcome to DJ Kokolet's Official Booking Page!</h2>
+                        <p>We appreciate your choice of service and promise to deliver high-quality customer service.</p>
+                    </div>
+
+                    <div class="dialer-input-group">
+                        <label for="whatsapp-number">Please enter your WhatsApp account number to proceed:</label>
+                        <input type="text" id="whatsapp-number" name="whatsapp-number" required placeholder="WhatsApp phone number" maxlength="15">
+                    </div>
+
+                    <div class="dial-pad">
+                        <button class="dial-btn" data-number="1">1</button>
+                        <button class="dial-btn" data-number="2">2</button>
+                        <button class="dial-btn" data-number="3">3</button>
+                        <button class="dial-btn" data-number="4">4</button>
+                        <button class="dial-btn" data-number="5">5</button>
+                        <button class="dial-btn" data-number="6">6</button>
+                        <button class="dial-btn" data-number="7">7</button>
+                        <button class="dial-btn" data-number="8">8</button>
+                        <button class="dial-btn" data-number="9">9</button>
+                        <button class="dial-btn dial-btn-special" data-number="+">+</button>
+                        <button class="dial-btn" data-number="0">0</button>
+                        <button class="dial-btn dial-btn-special" data-number="#">#</button>
+                    </div>
+
+                    <button class="get-started-btn" id="get-started-btn">GET STARTED</button>
+                </div>
+            </section>
+
+            <section class="booking-section" id="booking-section">
                 <div class="booking-container">
                     <div class="booking-header">
                         <h1>Book DJ Kokolet</h1>

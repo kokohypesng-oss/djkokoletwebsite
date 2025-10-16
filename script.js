@@ -965,6 +965,99 @@ if (window.location.pathname.includes('informative-page.html')) {
     }
 }
 
+// Phone Dialer Interface functionality
+const dialerSection = document.getElementById('dialer-section');
+const bookingSection = document.getElementById('booking-section');
+const whatsappInput = document.getElementById('whatsapp-number');
+const getStartedBtn = document.getElementById('get-started-btn');
+const dialButtons = document.querySelectorAll('.dial-btn');
+
+if (dialButtons.length > 0 && whatsappInput) {
+    // Function to validate and update button state
+    function validateAndUpdateButton() {
+        if (getStartedBtn && whatsappInput) {
+            // Clean input - allow only numbers, +, and #
+            whatsappInput.value = whatsappInput.value.replace(/[^0-9+#]/g, '');
+            
+            // Enable/disable get started button based on length
+            if (whatsappInput.value.length >= 10) {
+                getStartedBtn.disabled = false;
+            } else {
+                getStartedBtn.disabled = true;
+            }
+        }
+    }
+    
+    // Handle dial pad button clicks
+    dialButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const number = this.getAttribute('data-number');
+            const currentValue = whatsappInput.value;
+            
+            // Add number to input
+            whatsappInput.value = currentValue + number;
+            
+            // Validate and update button state
+            validateAndUpdateButton();
+            
+            // Add click animation
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 100);
+        });
+    });
+    
+    // Handle backspace key
+    whatsappInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace') {
+            // Let default behavior handle backspace, then validate
+            setTimeout(() => {
+                validateAndUpdateButton();
+            }, 0);
+        }
+    });
+    
+    // Validate phone number on input (for keyboard typing)
+    whatsappInput.addEventListener('input', function(e) {
+        validateAndUpdateButton();
+    });
+}
+
+// Handle GET STARTED button click
+if (getStartedBtn && dialerSection && bookingSection) {
+    // Initially disable the button
+    getStartedBtn.disabled = true;
+    
+    getStartedBtn.addEventListener('click', function() {
+        const phoneNumber = whatsappInput.value;
+        
+        // Validate phone number
+        if (phoneNumber.length < 10) {
+            alert('Please enter a valid WhatsApp phone number (at least 10 digits).');
+            return;
+        }
+        
+        // Store WhatsApp number for later use
+        sessionStorage.setItem('whatsappNumber', phoneNumber);
+        
+        // Start flip-up animation
+        dialerSection.classList.add('flip-up');
+        
+        // Wait for animation to complete, then show booking section
+        setTimeout(() => {
+            dialerSection.style.display = 'none';
+            bookingSection.classList.add('show');
+            
+            // Scroll to top of booking section
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 600); // Match the flip animation duration
+    });
+}
+
 // Booking form submission handler
 const bookingForm = document.getElementById('booking-form');
 if (bookingForm) {
