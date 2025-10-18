@@ -26,11 +26,15 @@ No specific user preferences documented yet.
     - URL routing with content data storage in `sessionStorage` and `history.pushState` for clean URLs.
 - **Music Player:** Features play/pause, next/previous controls, track information display, and waveform visualization (for Rave of the Moment).
 - **Booking System:** 
-    - **Phone Dialer Interface (UPDATED - 2025-10-16):** Initial screen with welcome message, WhatsApp number input, and realistic 3x4 dial pad
-    - Theme-aware circular dial buttons with gradient backgrounds and interactive animations
+    - **Phone Dialer Interface (UPDATED - 2025-10-18):** Initial screen with welcome message, WhatsApp number input, and realistic 3x4 dial pad
+    - Theme-aware rectangular dial buttons (50px height) with gradient backgrounds and interactive animations
     - Bottom row arrangement: GO (bottom-left with vibrant gradients), 0 (center), Backspace (bottom-right for deleting digits)
     - GO button with lemon gradient and bright green glow (light mode) / yellow gradient with deep golden glow (dark mode)
     - Ultra-compact spacing: -50px margin-top on input section (pulls input closer to welcome), -60px margin-top on dial pad for maximum tight integration
+    - **User Guide Box:** Rectangular info box (100% width, min 50px height) below keypad with step-by-step booking instructions
+      - Light mode: Black background with orange text
+      - Dark mode: Orange background with black text
+      - 5px padding, left-aligned text with clear instructions for using the booking interface
     - Flip-up 3D transition (600ms) reveals booking form after validation when 10+ characters entered
     - WhatsApp number stored in sessionStorage for form submission
     - **Booking Form:** Comprehensive form with fields for event details, client information, and direct WhatsApp integration for submission.

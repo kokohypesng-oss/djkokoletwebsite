@@ -2331,8 +2331,7 @@ body {
 }
 
 .dial-btn {
-    aspect-ratio: 1;
-    min-height: 70px;
+    height: 50px;
     background: var(--bg-tertiary);
     border: 0px solid var(--border-color);
     border-radius: 0px;
@@ -2413,6 +2412,35 @@ body {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none !important;
+}
+
+.user-guide-box {
+    width: 100%;
+    min-height: 50px;
+    padding: 5px;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.4;
+    border-radius: 0px;
+}
+
+.user-guide-box p {
+    margin: 5px 0;
+}
+
+.user-guide-box strong {
+    font-weight: 700;
+}
+
+[data-theme="dark"] .user-guide-box {
+    background: #ff6c3e;
+    color: #000000;
+}
+
+[data-theme="light"] .user-guide-box {
+    background: #000000;
+    color: #ff6c3e;
 }
 
 .get-started-btn {
