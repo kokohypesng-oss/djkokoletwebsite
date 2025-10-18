@@ -43,11 +43,14 @@ No specific user preferences documented yet.
 
 ### Feature Specifications
 - **Homepage:** Features "Hottest Exclusive Highlight," "Top Trending" tracks, and "Top Rated Artists."
-- **Music Page:** Displays "Top 10 World Most Played" tracks in a 2-column responsive grid with ranking badges. Includes a "SEE MORE POSTS" link to a dedicated page.
+- **Music Page:** Displays "Top 20 Most Played Worldwide" tracks in a 2-column responsive grid with ranking badges. Music cards have reduced gap (20px) with bottom cards having -40px margin-top for a tighter layout. Includes a "SEE MORE POSTS" link to a dedicated page.
 - **Mixtape Page:** Showcases "Rave of the Moment" with an enlarged player, waveform visualization, and prominent download/share options.
 - **Informative Page:** Generic content detail page displaying featured images, extracted tags, and actions (Play, Share, Download) based on content type.
 - **Booking Page:** Features a phone dialer interface as the entry point with WhatsApp number collection, followed by a comprehensive booking form that integrates directly with WhatsApp.
-- **K/AWARD Page:** A dedicated page for K/AWARD content.
+- **K/AWARD Page:** A dedicated page for the Kokohypes Award 2nd Edition featuring:
+  - Left-aligned text with 20px padding
+  - "Get ready" (29px), "KOKOHYPES" (50px), "AWARD" (54px in orange), "2nd Edition" (25px)
+  - Right-aligned "GET NOTIFY" button that links to WhatsApp (+2348129440095) with pre-filled message
 
 ## External Dependencies
 - **Font Awesome 6.4.0 (CDN):** Used for various icons across the website.
