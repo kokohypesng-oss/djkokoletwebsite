@@ -26,16 +26,12 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 server.py"
+args = "python server.py"
 waitForPort = 5000
 
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[[ports]]
-localPort = 32971
-externalPort = 3001
 
 [[ports]]
 localPort = 37805
@@ -64,6 +60,10 @@ externalPort = 3000
 [[ports]]
 localPort = 45467
 externalPort = 3003
+
+[[ports]]
+localPort = 46801
+externalPort = 3001
 
 [deployment]
 deploymentTarget = "autoscale"
