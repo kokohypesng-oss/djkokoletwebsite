@@ -1212,9 +1212,9 @@ body {
 }
 
 .music-card-cover {
-    width: 60px;
-    height: 60px;
-    padding: 40px;
+    width: 10px;
+    height: 10px;
+    padding: 50px;
     background: white;
     border-radius: 50%;
     display: flex;
