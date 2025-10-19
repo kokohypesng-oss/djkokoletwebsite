@@ -559,7 +559,7 @@ body {
 .album-cover {
     width: 100%;
     aspect-ratio: 1;
-    background: linear-gradient(135deg, #f093fb, #f5576c);
+    background: url('kokohypes-cover.png') center/cover, linear-gradient(135deg, #f093fb, #f5576c);
     border-radius: 0px;
     display: flex;
     align-items: center;
@@ -568,6 +568,11 @@ body {
     color: white;
     margin-bottom: 10px;
     transition: transform 0.2s;
+    overflow: hidden;
+}
+
+.album-cover i {
+    display: none;
 }
 
 .album-card:active .album-cover {
@@ -1215,16 +1220,18 @@ body {
     width: 10px;
     height: 10px;
     padding: 50px;
-    background: white;
+    background: url('kokohypes-cover.png') center/cover, white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .music-card-cover i {
     font-size: 20px;
     color: #ff6b9d;
+    display: none;
 }
 
 .music-card-info {
