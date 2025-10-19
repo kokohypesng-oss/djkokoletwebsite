@@ -31,13 +31,33 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     }
 });
 
-const tracks = [
-    { id: 1, title: 'Midnight Dreams', artist: 'The Soundwaves', category: 'Music', isNew: true },
-    { id: 2, title: 'Electric Soul', artist: 'Beat Masters', category: 'Mixtape', isNew: true },
-    { id: 3, title: 'Rhythm & Flow', artist: 'Urban Collective', category: 'Music', isNew: true },
-    { id: 4, title: 'Sunset Boulevard', artist: 'DJ Kokolet', category: 'Mixtape', isNew: true },
-    { id: 5, title: 'Neon Nights', artist: 'Electro Vibe', category: 'Music', isNew: true }
+// Music posts from Music category
+const musicPosts = [
+    { title: 'Midnight Dreams', artist: 'The Soundwaves', category: 'Music', isNew: true },
+    { title: 'Rhythm & Flow', artist: 'Urban Collective', category: 'Music', isNew: true },
+    { title: 'Neon Nights', artist: 'Electro Vibe', category: 'Music', isNew: true },
+    { title: 'Cosmic Dreams', artist: 'Star Gazer', category: 'Music', isNew: true },
+    { title: 'Desert Storm', artist: 'Sandy Vibes', category: 'Music', isNew: true },
+    { title: 'City Lights', artist: 'Urban Echo', category: 'Music', isNew: true }
 ];
+
+// Mixtape posts from Mixtape category
+const mixtapePosts = [
+    { title: 'Electric Soul', artist: 'Beat Masters', category: 'Mixtape', isNew: true },
+    { title: 'Sunset Boulevard', artist: 'DJ Kokolet', category: 'Mixtape', isNew: true },
+    { title: 'Ocean Waves', artist: 'Aqua Beats', category: 'Mixtape', isNew: true },
+    { title: 'Mountain High', artist: 'Peak Sounds', category: 'Mixtape', isNew: true },
+    { title: 'Forest Rain', artist: 'Nature Flow', category: 'Mixtape', isNew: true }
+];
+
+// Combined array for Top Trending - only new posts from Music and Mixtape
+const allPosts = [...musicPosts, ...mixtapePosts].filter(post => post.isNew);
+
+// Assign IDs to all posts
+const tracks = allPosts.map((post, index) => ({
+    id: index + 1,
+    ...post
+}));
 
 let currentTrack = null;
 let isPlaying = false;
@@ -45,10 +65,71 @@ let isPlaying = false;
 const playPauseBtn = document.getElementById('play-pause-btn');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
-const trackItems = document.querySelectorAll('.track-item');
 let trackPlayBtns = document.querySelectorAll('.track-play-btn');
 const playerDetails = document.querySelector('.player-details');
 const featuredPlayBtn = document.querySelector('.featured-track .play-btn');
+
+// Dynamically render Top Trending section on Home page
+function renderTopTrending() {
+    const trendingTracksContainer = document.getElementById('trending-tracks');
+    if (!trendingTracksContainer) return;
+    
+    // Clear existing content
+    trendingTracksContainer.innerHTML = '';
+    
+    // Render first 5 tracks from combined Music/Mixtape sources
+    const initialTracks = tracks.slice(0, 5);
+    
+    initialTracks.forEach((track) => {
+        const trackItem = document.createElement('div');
+        trackItem.className = 'track-item';
+        trackItem.setAttribute('data-track', track.id);
+        trackItem.setAttribute('data-category', track.category);
+        
+        trackItem.innerHTML = `
+            <div class="track-cover-small">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="track-details">
+                <h4>${track.title}</h4>
+                <p>${track.artist}</p>
+                <div class="music-badge">
+                    <i class="fas fa-circle"></i>
+                    <span>${track.category}</span>
+                </div>
+            </div>
+            <button class="track-play-btn">
+                <i class="fas fa-play"></i>
+            </button>
+        `;
+        
+        trendingTracksContainer.appendChild(trackItem);
+        
+        // Add click event to track item
+        trackItem.addEventListener('click', (e) => {
+            if (!e.target.closest('.track-play-btn')) {
+                playTrack(track.id);
+            }
+        });
+        
+        // Add click event to play button
+        const playBtn = trackItem.querySelector('.track-play-btn');
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentTrack && currentTrack.id === track.id) {
+                togglePlayPause();
+            } else {
+                playTrack(track.id);
+            }
+        });
+    });
+    
+    // Update trackPlayBtns reference
+    trackPlayBtns = document.querySelectorAll('.track-play-btn');
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', renderTopTrending);
 
 function updatePlayerUI(track) {
     playerDetails.querySelector('h4').textContent = track.title;
@@ -135,25 +216,7 @@ if (featuredPlayBtn) {
     });
 }
 
-trackItems.forEach((item, index) => {
-    item.addEventListener('click', (e) => {
-        if (!e.target.closest('.track-play-btn')) {
-            playTrack(index + 1);
-        }
-    });
-});
-
-trackPlayBtns.forEach((btn, index) => {
-    btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        
-        if (currentTrack && currentTrack.id === index + 1) {
-            togglePlayPause();
-        } else {
-            playTrack(index + 1);
-        }
-    });
-});
+// Track items are now dynamically created in renderTopTrending()
 
 const navItems = document.querySelectorAll('.nav-item');
 navItems.forEach(item => {
@@ -290,44 +353,19 @@ if (newsletterForm) {
     });
 }
 
-const additionalTracks = [
-    { title: 'Cosmic Dreams', artist: 'Star Gazer', category: 'Music', isNew: true },
-    { title: 'Ocean Waves', artist: 'Aqua Beats', category: 'Mixtape', isNew: true },
-    { title: 'Desert Storm', artist: 'Sandy Vibes', category: 'Music', isNew: true },
-    { title: 'Mountain High', artist: 'Peak Sounds', category: 'Mixtape', isNew: true },
-    { title: 'City Lights', artist: 'Urban Echo', category: 'Music', isNew: true },
-    { title: 'Forest Rain', artist: 'Nature Flow', category: 'Mixtape', isNew: true },
-    { title: 'Sunset Paradise', artist: 'Golden Hour', category: 'Music', isNew: true },
-    { title: 'Moonlight Sonata', artist: 'Night Dreams', category: 'Mixtape', isNew: true },
-    { title: 'Thunder Beats', artist: 'Storm Chasers', category: 'Music', isNew: true },
-    { title: 'Crystal Clear', artist: 'Pure Sound', category: 'Mixtape', isNew: true },
-    { title: 'Neon Paradise', artist: 'Retro Wave', category: 'Music', isNew: true },
-    { title: 'Digital Love', artist: 'Cyber Dreams', category: 'Mixtape', isNew: true },
-    { title: 'Summer Breeze', artist: 'Chill Vibes', category: 'Music', isNew: true },
-    { title: 'Winter Wonderland', artist: 'Snow Beats', category: 'Mixtape', isNew: true },
-    { title: 'Spring Awakening', artist: 'Fresh Start', category: 'Music', isNew: true },
-    { title: 'Autumn Leaves', artist: 'Fall Sounds', category: 'Mixtape', isNew: true },
-    { title: 'Tropical Paradise', artist: 'Island Beats', category: 'Music', isNew: true },
-    { title: 'Arctic Freeze', artist: 'Ice Cold', category: 'Mixtape', isNew: true },
-    { title: 'Volcano Eruption', artist: 'Hot Lava', category: 'Music', isNew: true },
-    { title: 'Rainbow Colors', artist: 'Spectrum Sound', category: 'Mixtape', isNew: true }
-];
-
-let loadedTracksCount = 0;
+let loadedTracksCount = 5; // Start after initial 5 tracks
 
 const loadMoreBtn = document.getElementById('load-more-trending');
 const trendingTracksContainer = document.getElementById('trending-tracks');
 
 if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
-        const tracksToLoad = additionalTracks.slice(loadedTracksCount, loadedTracksCount + 5);
-        const baseLength = tracks.length;
+        const tracksToLoad = tracks.slice(loadedTracksCount, loadedTracksCount + 5);
         
-        tracksToLoad.forEach((track, index) => {
-            const trackId = baseLength + index + 1;
+        tracksToLoad.forEach((track) => {
             const trackItem = document.createElement('div');
             trackItem.className = 'track-item';
-            trackItem.setAttribute('data-track', trackId);
+            trackItem.setAttribute('data-track', track.id);
             trackItem.setAttribute('data-category', track.category);
             
             trackItem.innerHTML = `
@@ -349,11 +387,9 @@ if (loadMoreBtn) {
             
             trendingTracksContainer.appendChild(trackItem);
             
-            tracks.push({ id: trackId, title: track.title, artist: track.artist, category: track.category, isNew: track.isNew });
-            
             trackItem.addEventListener('click', (e) => {
                 if (!e.target.closest('.track-play-btn')) {
-                    playTrack(trackId);
+                    playTrack(track.id);
                 }
             });
             
@@ -361,10 +397,10 @@ if (loadMoreBtn) {
             playBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 
-                if (currentTrack && currentTrack.id === trackId) {
+                if (currentTrack && currentTrack.id === track.id) {
                     togglePlayPause();
                 } else {
-                    playTrack(trackId);
+                    playTrack(track.id);
                 }
             });
         });
@@ -373,7 +409,7 @@ if (loadMoreBtn) {
         
         loadedTracksCount += tracksToLoad.length;
         
-        if (loadedTracksCount >= additionalTracks.length) {
+        if (loadedTracksCount >= tracks.length) {
             loadMoreBtn.style.display = 'none';
         }
     });
