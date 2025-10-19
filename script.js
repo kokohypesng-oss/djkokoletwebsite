@@ -32,11 +32,11 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 const tracks = [
-    { id: 1, title: 'Midnight Dreams', artist: 'The Soundwaves' },
-    { id: 2, title: 'Electric Soul', artist: 'Beat Masters' },
-    { id: 3, title: 'Rhythm & Flow', artist: 'Urban Collective' },
-    { id: 4, title: 'Sunset Boulevard', artist: 'DJ Kokolet' },
-    { id: 5, title: 'Neon Nights', artist: 'Electro Vibe' }
+    { id: 1, title: 'Midnight Dreams', artist: 'The Soundwaves', category: 'Music', isNew: true },
+    { id: 2, title: 'Electric Soul', artist: 'Beat Masters', category: 'Mixtape', isNew: true },
+    { id: 3, title: 'Rhythm & Flow', artist: 'Urban Collective', category: 'Music', isNew: true },
+    { id: 4, title: 'Sunset Boulevard', artist: 'DJ Kokolet', category: 'Mixtape', isNew: true },
+    { id: 5, title: 'Neon Nights', artist: 'Electro Vibe', category: 'Music', isNew: true }
 ];
 
 let currentTrack = null;
@@ -291,26 +291,26 @@ if (newsletterForm) {
 }
 
 const additionalTracks = [
-    { title: 'Cosmic Dreams', artist: 'Star Gazer' },
-    { title: 'Ocean Waves', artist: 'Aqua Beats' },
-    { title: 'Desert Storm', artist: 'Sandy Vibes' },
-    { title: 'Mountain High', artist: 'Peak Sounds' },
-    { title: 'City Lights', artist: 'Urban Echo' },
-    { title: 'Forest Rain', artist: 'Nature Flow' },
-    { title: 'Sunset Paradise', artist: 'Golden Hour' },
-    { title: 'Moonlight Sonata', artist: 'Night Dreams' },
-    { title: 'Thunder Beats', artist: 'Storm Chasers' },
-    { title: 'Crystal Clear', artist: 'Pure Sound' },
-    { title: 'Neon Paradise', artist: 'Retro Wave' },
-    { title: 'Digital Love', artist: 'Cyber Dreams' },
-    { title: 'Summer Breeze', artist: 'Chill Vibes' },
-    { title: 'Winter Wonderland', artist: 'Snow Beats' },
-    { title: 'Spring Awakening', artist: 'Fresh Start' },
-    { title: 'Autumn Leaves', artist: 'Fall Sounds' },
-    { title: 'Tropical Paradise', artist: 'Island Beats' },
-    { title: 'Arctic Freeze', artist: 'Ice Cold' },
-    { title: 'Volcano Eruption', artist: 'Hot Lava' },
-    { title: 'Rainbow Colors', artist: 'Spectrum Sound' }
+    { title: 'Cosmic Dreams', artist: 'Star Gazer', category: 'Music', isNew: true },
+    { title: 'Ocean Waves', artist: 'Aqua Beats', category: 'Mixtape', isNew: true },
+    { title: 'Desert Storm', artist: 'Sandy Vibes', category: 'Music', isNew: true },
+    { title: 'Mountain High', artist: 'Peak Sounds', category: 'Mixtape', isNew: true },
+    { title: 'City Lights', artist: 'Urban Echo', category: 'Music', isNew: true },
+    { title: 'Forest Rain', artist: 'Nature Flow', category: 'Mixtape', isNew: true },
+    { title: 'Sunset Paradise', artist: 'Golden Hour', category: 'Music', isNew: true },
+    { title: 'Moonlight Sonata', artist: 'Night Dreams', category: 'Mixtape', isNew: true },
+    { title: 'Thunder Beats', artist: 'Storm Chasers', category: 'Music', isNew: true },
+    { title: 'Crystal Clear', artist: 'Pure Sound', category: 'Mixtape', isNew: true },
+    { title: 'Neon Paradise', artist: 'Retro Wave', category: 'Music', isNew: true },
+    { title: 'Digital Love', artist: 'Cyber Dreams', category: 'Mixtape', isNew: true },
+    { title: 'Summer Breeze', artist: 'Chill Vibes', category: 'Music', isNew: true },
+    { title: 'Winter Wonderland', artist: 'Snow Beats', category: 'Mixtape', isNew: true },
+    { title: 'Spring Awakening', artist: 'Fresh Start', category: 'Music', isNew: true },
+    { title: 'Autumn Leaves', artist: 'Fall Sounds', category: 'Mixtape', isNew: true },
+    { title: 'Tropical Paradise', artist: 'Island Beats', category: 'Music', isNew: true },
+    { title: 'Arctic Freeze', artist: 'Ice Cold', category: 'Mixtape', isNew: true },
+    { title: 'Volcano Eruption', artist: 'Hot Lava', category: 'Music', isNew: true },
+    { title: 'Rainbow Colors', artist: 'Spectrum Sound', category: 'Mixtape', isNew: true }
 ];
 
 let loadedTracksCount = 0;
@@ -328,6 +328,7 @@ if (loadMoreBtn) {
             const trackItem = document.createElement('div');
             trackItem.className = 'track-item';
             trackItem.setAttribute('data-track', trackId);
+            trackItem.setAttribute('data-category', track.category);
             
             trackItem.innerHTML = `
                 <div class="track-cover-small">
@@ -336,6 +337,10 @@ if (loadMoreBtn) {
                 <div class="track-details">
                     <h4>${track.title}</h4>
                     <p>${track.artist}</p>
+                    <div class="music-badge">
+                        <i class="fas fa-circle"></i>
+                        <span>${track.category}</span>
+                    </div>
                 </div>
                 <button class="track-play-btn">
                     <i class="fas fa-play"></i>
@@ -344,7 +349,7 @@ if (loadMoreBtn) {
             
             trendingTracksContainer.appendChild(trackItem);
             
-            tracks.push({ id: trackId, title: track.title, artist: track.artist });
+            tracks.push({ id: trackId, title: track.title, artist: track.artist, category: track.category, isNew: track.isNew });
             
             trackItem.addEventListener('click', (e) => {
                 if (!e.target.closest('.track-play-btn')) {
