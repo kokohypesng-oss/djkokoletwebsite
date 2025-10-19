@@ -2292,7 +2292,7 @@ body {
 
 .dialer-welcome {
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 .dialer-welcome h2 {
@@ -2310,8 +2310,8 @@ body {
 }
 
 .dialer-input-group {
-    margin-top: -50px;
-    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 .dialer-input-group label {
@@ -2347,8 +2347,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin-top: -60px;
-    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     padding: 20px;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
 }
