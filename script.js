@@ -1,3 +1,40 @@
+// Copyright © 2025 Kokohypes. All rights reserved.
+// Unauthorized copying or distribution is prohibited.
+
+(function() {
+    'use strict';
+    
+    // Protection console message
+    console.log('%c⚠️ STOP!', 'color: red; font-size: 40px; font-weight: bold;');
+    console.log('%c© 2025 Kokohypes. All rights reserved.\nUnauthorized copying or use of this code is prohibited.', 'color: orange; font-size: 16px;');
+    
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // Disable keyboard shortcuts for viewing source
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 73)) {
+            e.preventDefault();
+            return false;
+        }
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // Disable text selection on code elements
+    document.addEventListener('selectstart', function(e) {
+        if (e.target.tagName === 'SCRIPT' || e.target.tagName === 'STYLE') {
+            e.preventDefault();
+            return false;
+        }
+    });
+})();
+
 function getPreferredTheme() {
     const storedTheme = localStorage.getItem('theme');
     

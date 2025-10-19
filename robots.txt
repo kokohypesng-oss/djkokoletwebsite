@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /attached_assets/
+
+# Sitemap
+Sitemap: https://kokohypes.ng/sitemap.xml
+
+# Crawl delay for bots
+Crawl-delay: 1
+
+# Protect against unauthorized copying
+User-agent: *
+Disallow: /script.js
