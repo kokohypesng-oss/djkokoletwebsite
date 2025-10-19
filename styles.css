@@ -249,6 +249,10 @@ body {
     flex-shrink: 0;
 }
 
+.track-cover i {
+    display: none;
+}
+
 .track-info {
     flex: 1;
 }
@@ -644,6 +648,10 @@ body {
     justify-content: center;
     font-size: 24px;
     color: white;
+}
+
+.player-cover i {
+    display: none;
 }
 
 .player-details h4 {
