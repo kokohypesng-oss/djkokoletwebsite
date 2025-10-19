@@ -484,7 +484,7 @@ body {
 .track-cover-small {
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: url('kokohypes-cover.png') center/cover, linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 0px;
     display: flex;
     align-items: center;
@@ -492,6 +492,10 @@ body {
     font-size: 24px;
     color: white;
     flex-shrink: 0;
+}
+
+.track-cover-small i {
+    display: none;
 }
 
 .track-details {
@@ -1375,10 +1379,14 @@ body {
     margin: 20px auto 10px;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: var(--bg-tertiary);
+    background: url('kokohypes-cover.png') center/cover, var(--bg-tertiary);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.featured-album-art i {
+    display: none;
 }
 
 .featured-track-title {
@@ -2000,7 +2008,7 @@ body {
     width: 100%;
     height: auto;
     min-height: 280px;
-    background: var(--bg-tertiary);
+    background: url('kokohypes-cover.png') center/cover, var(--bg-tertiary);
     border-radius: 0px;
     display: flex;
     align-items: center;
@@ -2011,6 +2019,7 @@ body {
 .content-featured-image i {
     font-size: 80px;
     color: var(--primary-color);
+    display: none;
 }
 
 .content-body {
