@@ -1173,7 +1173,7 @@ body {
 .music-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 50px;
     margin: 20px;
 }
 
@@ -1197,7 +1197,7 @@ body {
 .music-card-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 60px;
     background: linear-gradient(135deg, #ff6b9d, #c44569);
     border-radius: 0px;
     overflow: hidden;
@@ -2443,7 +2443,7 @@ body {
 .user-guide-box {
     width: 100%;
     min-height: 50px;
-    padding: 0px;
+    padding: 15px;
     margin-top: 10px;
     text-align: left;
     font-size: 13px;
@@ -2453,7 +2453,7 @@ body {
 
 .user-guide-box p {
     margin: 5px 0;
-    padding: 5px;
+    padding: 0px;
 }
 
 .user-guide-box strong {
@@ -2830,7 +2830,7 @@ body {
 
 /* K/AWARD Page Styling */
 .kaward-section {
-    padding: 20px;
+    padding: 30px;
     min-height: calc(100vh - 200px);
     display: flex;
     flex-direction: column;
@@ -2842,7 +2842,7 @@ body {
 }
 
 .kaward-get-ready {
-    font-size: 29px;
+    font-size: 59px;
     font-weight: 400;
     color: var(--text-primary);
     margin: 0 0 10px 0;
@@ -2850,7 +2850,7 @@ body {
 }
 
 .kaward-title {
-    font-size: 50px;
+    font-size: 99px;
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
@@ -2858,7 +2858,7 @@ body {
 }
 
 .kaward-award {
-    font-size: 54px;
+    font-size: 99px;
     font-weight: 700;
     color: var(--primary-color);
     margin: 0;
@@ -2866,7 +2866,7 @@ body {
 }
 
 .kaward-edition {
-    font-size: 25px;
+    font-size: 52px;
     font-weight: 400;
     color: var(--text-secondary);
     margin: 10px 0 0 0;
@@ -2876,6 +2876,13 @@ body {
 .kaward-button-container {
     text-align: right;
     margin-top: 40px;
+}
+
+.kaward-loading-text {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-align: right;
 }
 
 .kaward-notify-btn {
