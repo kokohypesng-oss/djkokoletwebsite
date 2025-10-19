@@ -26,11 +26,11 @@ No specific user preferences documented yet.
     - URL routing with content data storage in `sessionStorage` and `history.pushState` for clean URLs.
 - **Music Player:** Features play/pause, next/previous controls, track information display, and waveform visualization (for Rave of the Moment).
 - **Booking System:** 
-    - **Phone Dialer Interface (UPDATED - 2025-10-18):** Initial screen with welcome message, WhatsApp number input, and realistic 3x4 dial pad
+    - **Phone Dialer Interface (UPDATED - 2025-10-19):** Initial screen with welcome message, WhatsApp number input, and realistic 3x4 dial pad
     - Theme-aware rectangular dial buttons (50px height) with gradient backgrounds and interactive animations
     - Bottom row arrangement: GO (bottom-left with vibrant gradients), 0 (center), Backspace (bottom-right for deleting digits)
     - GO button with lemon gradient and bright green glow (light mode) / yellow gradient with deep golden glow (dark mode)
-    - Ultra-compact spacing: -50px margin-top on input section (pulls input closer to welcome), -60px margin-top on dial pad for maximum tight integration
+    - Natural spacing: 20px margin-bottom on welcome, input, and dial pad sections for natural content flow without column structures
     - **User Guide Box:** Rectangular info box (100% width, min 50px height) below keypad with step-by-step booking instructions
       - Light mode: Black background with orange text
       - Dark mode: Orange background with black text
@@ -42,14 +42,22 @@ No specific user preferences documented yet.
 - **Server:** Python 3.12 built-in HTTP server running on port 5000, configured with `cache-control` headers for no-caching in development.
 
 ### Feature Specifications
-- **Homepage:** Features "Hottest Exclusive Highlight," "Top Trending" tracks, and "Top Rated Artists."
-- **Music Page:** Displays "Top 20 Most Played Worldwide" tracks in a 2-column responsive grid with ranking badges. Music cards have reduced gap (20px) with bottom cards having -40px margin-top for a tighter layout. Includes a "SEE MORE POSTS" link to a dedicated page.
+- **Homepage:** Features "Hottest Exclusive Highlight" and "Top Rated Artists."
+  - **Top Trending (UPDATED - 2025-10-19):** Dynamically pulls new posts from Music and Mixtape categories
+    - Content rendered from musicPosts and mixtapePosts arrays filtered by isNew flag
+    - Category badges display source category (Music or Mixtape) for each track
+    - Initial display shows 5 tracks with "SHOW MORE POSTS" to load additional content
+    - All content dynamically generated via JavaScript, no static HTML
+- **Music Page (UPDATED - 2025-10-19):** Displays "Top 20 Most Played Worldwide" tracks in a 2-column responsive grid with ranking badges
+  - Music cards use 1:1 aspect ratio (aspect-ratio: 1/1) with 100% width for perfect square tiles
+  - Cards have reduced gap (20px) with bottom cards having -40px margin-top for a tighter layout
+  - Includes a "SEE MORE POSTS" link to a dedicated page
 - **Mixtape Page:** Showcases "Rave of the Moment" with an enlarged player, waveform visualization, and prominent download/share options.
 - **Informative Page:** Generic content detail page displaying featured images, extracted tags, and actions (Play, Share, Download) based on content type.
 - **Booking Page:** Features a phone dialer interface as the entry point with WhatsApp number collection, followed by a comprehensive booking form that integrates directly with WhatsApp.
-- **K/AWARD Page:** A dedicated page for the Kokohypes Award 2nd Edition featuring:
-  - Left-aligned text with 20px padding
-  - "Get ready" (29px), "KOKOHYPES" (50px), "AWARD" (54px in orange), "2nd Edition" (25px)
+- **K/AWARD Page (UPDATED - 2025-10-19):** A dedicated page for the Kokohypes Award 2nd Edition featuring:
+  - Left-aligned text with 30px padding
+  - "Get ready for the" (40px), "KOKO" (105px black), "HYPES" (105px black), "AWARD" (99px orange), "2nd Edition" (52px)
   - Right-aligned "GET NOTIFY" button that links to WhatsApp (+2348129440095) with pre-filled message
 
 ## External Dependencies
