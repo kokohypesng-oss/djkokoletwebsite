@@ -237,14 +237,14 @@ body {
 }
 
 .track-cover {
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    width: 120px;
+    height: 120px;
+    background: url('kokohypes-cover.png') center/cover, linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 38px;
+    font-size: 48px;
     color: white;
     flex-shrink: 0;
 }
@@ -482,14 +482,14 @@ body {
 }
 
 .track-cover-small {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     background: url('kokohypes-cover.png') center/cover, linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 32px;
     color: white;
     flex-shrink: 0;
 }
@@ -635,14 +635,14 @@ body {
 }
 
 .player-cover {
-    width: 45px;
-    height: 45px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    width: 60px;
+    height: 60px;
+    background: url('kokohypes-cover.png') center/cover, linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 24px;
     color: white;
 }
 
@@ -745,8 +745,8 @@ body {
     }
 
     .track-cover {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
     }
 
     .nav-item {
@@ -1221,9 +1221,8 @@ body {
 }
 
 .music-card-cover {
-    width: 10px;
-    height: 10px;
-    padding: 50px;
+    width: 140px;
+    height: 140px;
     background: url('kokohypes-cover.png') center/cover, white;
     border-radius: 50%;
     display: flex;
@@ -1233,7 +1232,7 @@ body {
 }
 
 .music-card-cover i {
-    font-size: 20px;
+    font-size: 28px;
     color: #ff6b9d;
     display: none;
 }
@@ -1375,9 +1374,9 @@ body {
 }
 
 .featured-album-art {
-    width: calc(100% - 60px);
+    width: calc(100% - 40px);
     margin: 20px auto 10px;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background: url('kokohypes-cover.png') center/cover, var(--bg-tertiary);
     display: flex;
