@@ -336,24 +336,6 @@ body {
     margin: 5px 0 15px 0;
 }
 
-.show-more-container::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 80%;
-    height: 1px;
-    background-color: #444;
-}
-
-.show-more-divider {
-    border: none;
-    border-top: 1px solid #999;
-    margin: 0 auto 15px;
-    width: 100%;
-}
-
 .show-more-btn {
     background: var(--bg-secondary);
     border: none;
@@ -1145,6 +1127,10 @@ body {
     margin-bottom: 0;
 }
 
+.trending-now-section .section-title {
+    font-size: 14px;
+}
+
 .trending-list {
     display: flex;
     flex-direction: column;
@@ -1173,7 +1159,7 @@ body {
 .music-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 30px;
     margin: 20px;
 }
 
@@ -1226,8 +1212,9 @@ body {
 }
 
 .music-card-cover {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    padding: 40px;
     background: white;
     border-radius: 50%;
     display: flex;
@@ -2912,4 +2899,9 @@ body {
 .kaward-notify-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 10px rgba(255, 108, 62, 0.3);
+}
+
+/* Last content on every page */
+.main-content > *:last-child {
+    margin-bottom: -10px;
 }
