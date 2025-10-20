@@ -1,0 +1,18 @@
+/*
+Theme Name: Koko Mobile Theme
+Theme URI: https://kokohypes.com.ng
+Author: DJ Kokolet
+Author URI: https://kokohypes.com.ng
+Description: A mobile-first music streaming theme for DJ Kokolet (Kokohypes) featuring dark/light themes, music player, booking system, and modern digital aesthetic with sharp corners.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: koko-mobile-theme
+Tags: music, mobile-first, dark-mode, entertainment, responsive, one-column
+
+This is the main stylesheet file for the Koko Mobile Theme.
+All additional styles are organized in the /css/ folder.
+*/
+
+/* Import main styles */
+@import url('css/main.css');

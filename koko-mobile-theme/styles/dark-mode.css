@@ -1,0 +1,62 @@
+/**
+ * Styles: Dark Mode
+ * 
+ * This file contains the dark mode color scheme for the theme.
+ * It defines CSS variables for dark theme colors and backgrounds.
+ * The theme switcher in the header toggles between light and dark modes.
+ * 
+ * @package Koko_Mobile_Theme
+ */
+
+:root {
+    /* Dark Mode Colors */
+    --dark-bg-primary: #0A0A0A;
+    --dark-bg-secondary: #1A1A1A;
+    --dark-bg-tertiary: #2A2A2A;
+    --dark-text-primary: #E5E5E5;
+    --dark-text-secondary: #A0A0A0;
+    --dark-border: rgba(255, 255, 255, 0.1);
+    
+    /* Brand Colors (same in both modes) */
+    --primary-purple: #8B5CF6;
+    --secondary-pink: #FF6B9D;
+    --accent-blue: #3B82F6;
+}
+
+/* Dark Theme Active */
+body.dark-theme {
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+body.dark-theme .app-container {
+    background: var(--dark-bg-primary);
+}
+
+body.dark-theme .main-header {
+    background: var(--dark-bg-secondary);
+    border-color: var(--dark-border);
+}
+
+body.dark-theme .music-card {
+    background: var(--dark-bg-secondary);
+    border-color: var(--dark-border);
+}
+
+body.dark-theme .music-card:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.dark-theme .bottom-nav {
+    background: var(--dark-bg-secondary);
+    border-color: var(--dark-border);
+}
+
+body.dark-theme .nav-item.active {
+    color: var(--primary-purple);
+}
+
+body.dark-theme .music-player-bar {
+    background: var(--dark-bg-secondary);
+    border-color: var(--dark-border);
+}

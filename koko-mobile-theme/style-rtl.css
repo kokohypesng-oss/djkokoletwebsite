@@ -1,0 +1,60 @@
+/*
+Theme Name: Koko Mobile Theme (RTL)
+Description: Right-to-left (RTL) stylesheet for languages like Arabic, Hebrew, Persian, etc.
+
+This file provides RTL language support by flipping layouts and directions.
+WordPress automatically loads this file when the site language is RTL.
+
+@package Koko_Mobile_Theme
+*/
+
+/* RTL Layout Adjustments */
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Flip floating elements */
+.float-left {
+    float: right;
+}
+
+.float-right {
+    float: left;
+}
+
+/* Flip text alignment */
+.text-left {
+    text-align: right;
+}
+
+.text-right {
+    text-align: left;
+}
+
+/* Adjust margins and padding */
+.music-card-rank {
+    left: auto;
+    right: 12px;
+}
+
+/* Navigation adjustments */
+.bottom-nav {
+    flex-direction: row-reverse;
+}
+
+/* Player controls */
+.player-controls {
+    flex-direction: row-reverse;
+}
+
+/* Search icon position */
+.search-icon {
+    left: auto;
+    right: 15px;
+}
+
+.search-input {
+    padding-left: 15px;
+    padding-right: 40px;
+}
