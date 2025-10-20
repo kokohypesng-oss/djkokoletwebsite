@@ -51,7 +51,7 @@ Your Kokohypes website has been comprehensively optimized for maximum performanc
 ✅ Twitter Card metadata  
 
 #### Technical SEO:
-✅ **Sitemap.xml** - `https://kokohypes.ng/sitemap.xml`  
+✅ **Sitemap.xml** - `https://kokohypes.com.ng/sitemap.xml`  
 ✅ **Robots.txt** - Proper search engine instructions  
 ✅ **Structured Data (JSON-LD)** - Schema.org markup for:
    - Website information
