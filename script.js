@@ -831,6 +831,16 @@ document.querySelectorAll('.album-card').forEach(card => {
     });
 });
 
+// Music Cards Click Handler (for Top 20 Most Played, see-more-posts, artist-profiles)
+document.querySelectorAll('.music-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        const title = card.querySelector('h4').textContent;
+        const artist = card.querySelector('p').textContent;
+        const fullTitle = `${title} - ${artist}`;
+        navigateToContent('music', fullTitle);
+    });
+});
+
 // Load content data on informative page
 if (window.location.pathname.includes('informative-page.html')) {
     const contentData = JSON.parse(sessionStorage.getItem('contentData') || '{}');
